@@ -1,0 +1,281 @@
+object Form1: TForm1
+  Left = 2468
+  Height = 933
+  Top = 78
+  Width = 1043
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Form1'
+  ClientHeight = 933
+  ClientWidth = 1043
+  DesignTimePPI = 91
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.12.0'
+  object Image1: TImage
+    Left = 56
+    Height = 147
+    Top = 562
+    Width = 147
+    OnDblClick = Image1DblClick
+    Stretch = True
+  end
+  object Image2: TImage
+    Left = 233
+    Height = 147
+    Top = 562
+    Width = 147
+    OnDblClick = Image2DblClick
+    Stretch = True
+  end
+  object Image3: TImage
+    Left = 409
+    Height = 147
+    Top = 562
+    Width = 147
+    OnDblClick = Image3DblClick
+    Stretch = True
+  end
+  object Image4: TImage
+    Left = 584
+    Height = 147
+    Top = 562
+    Width = 147
+    OnDblClick = Image4DblClick
+    Stretch = True
+  end
+  object Memo1: TMemo
+    Left = 752
+    Height = 677
+    Top = 32
+    Width = 256
+    Lines.Strings = (
+      'Memo1'
+    )
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Image5: TImage
+    Left = 56
+    Height = 496
+    Top = 32
+    Width = 675
+    Stretch = True
+  end
+  object HpBar1: TProgressBar
+    Left = 56
+    Height = 34
+    Top = 805
+    Width = 147
+    ParentFont = False
+    TabOrder = 1
+  end
+  object HpL1: TLabel
+    Left = 56
+    Height = 27
+    Top = 766
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Жизни:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object HpBar2: TProgressBar
+    Left = 233
+    Height = 34
+    Top = 805
+    Width = 147
+    ParentFont = False
+    TabOrder = 2
+  end
+  object HpL2: TLabel
+    Left = 233
+    Height = 27
+    Top = 766
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Жизни:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object HpL3: TLabel
+    Left = 409
+    Height = 27
+    Top = 766
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Жизни:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object HpBar3: TProgressBar
+    Left = 409
+    Height = 34
+    Top = 805
+    Width = 147
+    ParentFont = False
+    TabOrder = 3
+  end
+  object HpL4: TLabel
+    Left = 584
+    Height = 27
+    Top = 766
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Жизни:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object HpBar4: TProgressBar
+    Left = 584
+    Height = 34
+    Top = 805
+    Width = 147
+    ParentFont = False
+    TabOrder = 4
+  end
+  object NameL1: TLabel
+    Left = 56
+    Height = 27
+    Top = 720
+    Width = 147
+    AutoSize = False
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object NameL2: TLabel
+    Left = 233
+    Height = 27
+    Top = 720
+    Width = 147
+    AutoSize = False
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object NameL3: TLabel
+    Left = 409
+    Height = 27
+    Top = 720
+    Width = 147
+    AutoSize = False
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object NameL4: TLabel
+    Left = 584
+    Height = 27
+    Top = 720
+    Width = 147
+    AutoSize = False
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object ManaL1: TLabel
+    Left = 56
+    Height = 27
+    Top = 849
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Мана:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object ManaL2: TLabel
+    Left = 233
+    Height = 27
+    Top = 849
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Мана:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object ManaL3: TLabel
+    Left = 409
+    Height = 27
+    Top = 849
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Мана:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object ManaL4: TLabel
+    Left = 584
+    Height = 27
+    Top = 849
+    Width = 147
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Мана:'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object ManaBar4: TProgressBar
+    Left = 584
+    Height = 34
+    Top = 887
+    Width = 147
+    ParentFont = False
+    TabOrder = 5
+    Visible = False
+  end
+  object ManaBar1: TProgressBar
+    Left = 56
+    Height = 34
+    Top = 887
+    Width = 147
+    ParentFont = False
+    TabOrder = 6
+    Visible = False
+  end
+  object ManaBar2: TProgressBar
+    Left = 233
+    Height = 34
+    Top = 887
+    Width = 147
+    ParentFont = False
+    TabOrder = 7
+    Visible = False
+  end
+  object ManaBar3: TProgressBar
+    Left = 409
+    Height = 34
+    Top = 887
+    Width = 147
+    ParentFont = False
+    TabOrder = 8
+    Visible = False
+  end
+  object LocTitle: TLabel
+    Left = 56
+    Height = 16
+    Top = 528
+    Width = 46
+    Caption = 'LocTitle'
+    ParentColor = False
+  end
+end

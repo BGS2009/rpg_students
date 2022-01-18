@@ -1,0 +1,126 @@
+object Form2: TForm2
+  Left = 968
+  Height = 795
+  Top = 113
+  Width = 445
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Form2'
+  ClientHeight = 795
+  ClientWidth = 445
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.10.0'
+  object Image1: TImage
+    Left = 8
+    Height = 368
+    Top = 8
+    Width = 426
+    Stretch = True
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 54
+    Top = 384
+    Width = 116
+    Caption = 'Label1'
+    Font.Height = -40
+    ParentColor = False
+    ParentFont = False
+  end
+  object Image2: TImage
+    Left = 8
+    Height = 154
+    Top = 448
+    Width = 200
+  end
+  object Image3: TImage
+    Left = 234
+    Height = 154
+    Top = 448
+    Width = 200
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 28
+    Top = 616
+    Width = 57
+    Caption = 'Label2'
+    Font.Height = -20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 234
+    Height = 28
+    Top = 616
+    Width = 57
+    Caption = 'Label3'
+    Font.Height = -20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Image4: TImage
+    Left = 8
+    Height = 90
+    Top = 656
+    Width = 90
+  end
+  object Image5: TImage
+    Left = 118
+    Height = 90
+    Top = 656
+    Width = 90
+  end
+  object Image6: TImage
+    Left = 232
+    Height = 90
+    Top = 656
+    Width = 90
+  end
+  object Image7: TImage
+    Left = 344
+    Height = 90
+    Top = 656
+    Width = 90
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 17
+    Top = 760
+    Width = 38
+    Caption = 'Label4'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 118
+    Height = 17
+    Top = 760
+    Width = 38
+    Caption = 'Label5'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 232
+    Height = 17
+    Top = 760
+    Width = 38
+    Caption = 'Label6'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 344
+    Height = 17
+    Top = 760
+    Width = 38
+    Caption = 'Label7'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+end
