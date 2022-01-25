@@ -44,7 +44,7 @@ end;
 
 function THero.damage():integer;
 begin
-  writeln(name,' издает боевой клич и поднимает', weapons[1].name);
+  new_message:=name+' издает боевой клич и поднимает'+weapons[1].name;
    damage:=random(weapons[1].damage)+1;
   end;
 
@@ -53,18 +53,18 @@ begin
 
       if random(attack)>random(e.defend) then begin
             isAttackSuccesful:=true;
-            writeln(name,' нанес удар!');
+            new_message:=name+' нанес удар!';
       end
       else begin
           isAttackSuccesful:=false;
 
-            writeln(name,' не нанес удар!');
+            new_message:=name+' не нанес удар!';
       end;
     end;
 
 procedure THero.levelUp()   ;
 begin
-  writeln('Герой', name,' повысил уровень!')    ;
+  new_message:='Герой'+name+' повысил уровень!';
   exp_points:=0;
   exp_level:=exp_level+1;
   next_level_exp_points:=round(1.2*next_level_exp_points);

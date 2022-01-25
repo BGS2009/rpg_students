@@ -95,6 +95,7 @@
       <Unit12>
         <Filename Value="personage.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="Personage"/>
       </Unit12>
       <Unit13>
         <Filename Value="shield.pas"/>

@@ -19,7 +19,8 @@ implementation
 
 constructor TGoblin.create();
 begin
-
+   
+  portrait_path:='img/Goblin.png';
   hp:=30;
   max_hp:=30;
   attack:=5;
@@ -33,15 +34,17 @@ end;
  begin
 
    if random(attack)>random(e.defend) then begin
+     new_message:=name+' ударил!';
          isAttackSuccesful:=true;
    end
    else begin
     isAttackSuccesful:=false;
+    new_message:=name+'не нанёс удар!';
     if hp<0.2 *  max_hp then
     begin
     if random(3) = 0 then
     begin
-    writeln('Гоблин сбежал!!');
+    new_message:+'Гоблин сбежал!';
     e.gold:= e.gold-(random(15)+5) ;
     hp:=0;
     end;

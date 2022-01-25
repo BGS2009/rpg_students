@@ -37,6 +37,7 @@ function Tvampire.isAttackSuccesful(e:Tpersonage):boolean;
    if random(attack)>random(e.defend) then
    begin
      isAttackSuccesful:=true;
+     new_message:='Укусил героя!';
      if random(bleeding)>10 then
      begin
        b:=true;
@@ -50,16 +51,16 @@ function Tvampire.isAttackSuccesful(e:Tpersonage):boolean;
    begin
        b:=false;
      isAttackSuccesful:=false;
+     new_message:='Не смог укусить героя!';
     end;
   end;
 
 function Tvampire.damage():integer;
   begin
-    writeln('Издает ужасный звук!');
+    new_message:='Издает ужасный звук!';
     if b=true then
     begin
      damage:=random(5)+1+bleeding;
-     writeln('Укусил героя!');
     end
     else
     begin

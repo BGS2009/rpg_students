@@ -7,6 +7,7 @@ interface
 uses
   Classes, SysUtils,Item;
  type TPersonage = class
+   new_message: String;
    hp:integer;
    max_hp:integer;
    attack:integer;

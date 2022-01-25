@@ -13,6 +13,9 @@ uses
    defend:integer;
    gold:integer;
    inventory:array[1..100] of TItem;
+   exp_points:integer;
+   exp_level:integer;
+   next_level_exp_points:integer;
    constructor create();
    function isAttackSuccesful(e:TPersonage):boolean;
    function damage():integer;
@@ -32,6 +35,9 @@ constructor TPersonage.create();
         attack:=10;
         defend:=10;
         gold:=0;
+         exp_points:=0;
+         exp_level:=1;
+         next_level_exp_points:=100;
     end;
 
     function TPersonage.isAttackSuccesful(e:TPersonage):boolean;
