@@ -5,13 +5,14 @@ unit Barbarian;
 interface
 
 uses
-  Classes, SysUtils,Graphics, Hero,Weapon,Shield;
+  Classes, SysUtils,Graphics,Personage, Hero,Weapon,Shield;
  
 
    { TBarbarian }
 
   type  TBarbarian = class(THero)
-function damage():Integer;
+  function damage():Integer;
+  function isAttackSuccesful(e:TPersonage):boolean;
   constructor create(name1:String);
 end;
 implementation
@@ -20,19 +21,32 @@ implementation
 function TBarbarian.damage: Integer;
 begin
   if random(2)=0 then begin
-     WriteLn(name, ' ударил!');
      readln;
     damage:=Random(attack);
 
   end
   else
   begin
-    WriteLn(name, ' ударил ещё раз!');
+    new_message:=name+ ' ударил ещё раз!';
     readln;
 
     damage:=Random(attack)*2;
   end;
 end;
+
+function TBarbarian.isAttackSuccesful(e:TPersonage):boolean;
+    begin
+
+      if random(attack)>random(e.defend) then begin
+            isAttackSuccesful:=true;
+            new_message:=name+' ударил!';
+      end
+      else begin
+          isAttackSuccesful:=false;
+
+            new_message:=name+' не нанес удар!';
+      end;
+    end;
 
 constructor TBarbarian.create(name1: String);
 var
@@ -74,5 +88,6 @@ begin
   exp_level:=1;
   next_level_exp_points:=100;
 end;
+
 end.
 

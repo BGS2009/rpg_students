@@ -5,12 +5,13 @@ unit Orc;
 interface
 
 uses
-  Classes, SysUtils,Enemy;
+  Classes, SysUtils,Enemy,Persnage;
    
     { TOrc }
 
   type TOrc = class(TEnemy)
   function damage:Integer;
+  function isAttackSuccesful(e:TPersonage):boolean;
   constructor create();
 end;
 implementation
@@ -23,7 +24,7 @@ end;
 
 constructor TOrc.create();
 begin
-
+  portrait_path:='img/Orc.png';
   hp:=80;
   max_hp:=80;
   attack:=7;
@@ -32,6 +33,19 @@ begin
    exp_points:=120;
 end;
 
+function TOrc.isAttackSuccesful(e:TPersonage):boolean;
+    begin
+
+      if random(attack)>random(e.defend) then begin
+            isAttackSuccesful:=true;
+            new_message:=name+' нанес удар!';
+      end
+      else begin
+          isAttackSuccesful:=false;
+
+            new_message:=name+' не нанес удар!';
+      end;
+    end;
 
 end.
 

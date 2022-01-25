@@ -20,6 +20,8 @@ implementation
 
 constructor Tvampire.create();
     begin
+
+  portrait_path:='img/Vampire.png';
      hp:=70;
      max_hp:=70;
      attack:=20;

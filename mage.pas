@@ -62,7 +62,7 @@ end;
 function TMage.isAttackSuccesful(e:TPersonage):boolean;
  begin
    if spells<=0 then begin
-         writeln('У мага ',name,' кончилась мана!');
+         new_message:='У мага '+name+' кончилась мана!';
    if random(attack)>random(e.defend) then begin
          isAttackSuccesful:=true;
    end
@@ -72,7 +72,7 @@ function TMage.isAttackSuccesful(e:TPersonage):boolean;
 
    end
    else begin
-       writeln(name,' бросает огненный шар!');
+       new_message:=name+' бросает огненный шар!';
        isAttackSuccesful:=true;
    end;
  end;

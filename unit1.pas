@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  ComCtrls, Barbarian, Hero, MAge, Paladine, Personage, Unit2,Map;
+  ComCtrls, Menus, Barbarian, Hero, MAge, Paladine, Personage, Unit2,Map;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    battle_pause: TButton;
     Image1: TImage;
     Image2: TImage;
     Image3: TImage;
@@ -47,6 +48,8 @@ type
     procedure Image3DblClick(Sender: TObject);
     procedure Image4DblClick(Sender: TObject);
     procedure LoadAndDraw(const sFileName: String ; pic_resize:boolean; x,y:integer);
+    procedure battle_pauseClick(Sender: TObject);
+    procedure get_messages();
   private
 
   public
@@ -63,6 +66,38 @@ implementation
 {$R *.lfm}
 
 { TForm1 }
+
+procedure TForm1.battle_pauseClick(Sender: TObject);
+var dmg,i,r:integer;
+begin
+  for i:=1 to 4 do
+  begin
+    r:=random(4)+1;
+    if heroes[i].isAttackSuccesful(level_map.locations[current_location].enemies[r]) then
+    begin
+       level_map.locations[current_location].enemies[r].getDamage(heroes[i].damage);
+    end;
+    r:=random(4)+1;
+    if level_map.locations[current_location].enemies[i].isAttackSuccesful(heroes[r]) then
+    begin
+       heroes[r].getDamage(level_map.locations[current_location].enemies[i].damage);
+    end;
+  end;
+
+    get_messages();
+end;
+
+procedure TForm1.get_messages();
+  var message:string;i:integer;
+  begin
+    for i:=1 to 4 do
+    begin
+      message:=heroes[i].new_message;
+      memo1.Append(message);
+      message:=level_map.locations[current_location].enemies[i].new_message;
+      memo1.Append(message);
+    end;
+  end;
 
 procedure TForm1.LoadAndDraw(const sFileName: String;pic_resize:boolean;x,y:integer);
 var

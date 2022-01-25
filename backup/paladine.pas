@@ -11,6 +11,7 @@ uses
          d:integer;
          constructor create(name1:String);
          procedure getDamage(dmg:integer);
+         function isAttackSuccesful(e:TPersonage):boolean;
   end;
 implementation
   
@@ -24,7 +25,7 @@ begin
   weapon1:=TWeapon.create;
   weapon1.name:='Жуайез';
   weapon1.damage:=15;
-  weapon:=weapon1;
+  weapons[1]:=weapon1;
    shield1:=TShield.create;
   shield1.name:='Стальной щит';
  shield1.defend:=15;
@@ -46,16 +47,22 @@ begin
 
   procedure TPaladine.getDamage(dmg:integer);
   begin
-  d:=random(15+shield.defend);
-  if d>15 then
-  begin
-  dmg:=0;
-  writeln(name,' отбил удар врага!');
-  writeln(shield.name,'трещит, но выдерживает удар!')
-  end;
   hp:=hp-dmg ;
   end;
 
+  function TPaladine.isAttackSuccesful(e:TPersonage):boolean;
+      begin
+
+        if random(attack)>random(e.defend) then begin
+              isAttackSuccesful:=true;
+              new_message:=name+' нанес удар!';
+        end
+        else begin
+            isAttackSuccesful:=false;
+
+              new_message:=name+' не нанес удар!';
+        end;
+      end;
 
 end.
 

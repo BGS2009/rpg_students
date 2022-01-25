@@ -23,7 +23,7 @@ implementation
     weapon1:=TWeapon.create();
     weapon1.name:='Посох';
     weapon1.damage:=3;
-    weapon[1]:=weapon1;
+    weapons[1]:=weapon1;
     weapon1:=TWeapon.create();
     weapon1.name:='Огненный посох';
     weapon1.damage:=9;
