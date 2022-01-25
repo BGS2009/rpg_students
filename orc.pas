@@ -30,7 +30,7 @@ begin
   attack:=7;
   defend:=14;
   name:='Орк';
-   exp_points:=120;
+  exp_points:=120;
 end;
 
 function TOrc.isAttackSuccesful(e:TPersonage):boolean;

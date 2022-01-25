@@ -14,6 +14,7 @@ type
 
   TForm1 = class(TForm)
     battle_pause: TButton;
+    nxt_location_btn: TButton;
     Image1: TImage;
     Image2: TImage;
     Image3: TImage;
@@ -41,6 +42,9 @@ type
     ManaBar1: TProgressBar;
     ManaBar2: TProgressBar;
     ManaBar3: TProgressBar;
+    act_location_btn: TButton;
+    prv_location_btn: TButton;
+    procedure nxt_location_btnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Image1DblClick(Sender: TObject);
     procedure getHeroInfo(n:Integer);
@@ -50,6 +54,7 @@ type
     procedure LoadAndDraw(const sFileName: String ; pic_resize:boolean; x,y:integer);
     procedure battle_pauseClick(Sender: TObject);
     procedure get_messages();
+
   private
 
   public
@@ -67,24 +72,95 @@ implementation
 
 { TForm1 }
 
+
+  //проверка, мертвы ли все враги
+  function isEveryEnemyDead():boolean;
+  var i,a:integer;
+  begin
+    a:=0;
+    for i:=1 to 4 do begin
+      if  (not level_map.locations[current_location].enemies[i].isDead) then begin
+        a:=a+1;
+      end;
+    end;
+    if a<>0 then isEveryEnemyDead:=false else isEveryEnemyDead:=true;
+  end;
+
+    //проверка, мертвы ли все герои
+  function isEveryHeroDead():boolean;
+  var i,a:integer;
+  begin
+    a:=0;
+    for i:=1 to 4 do begin
+      if  (not heroes[i].isDead) then begin
+        a:=a+1;
+      end;
+    end;
+    if a<>0 then isEveryHeroDead:=false else isEveryHeroDead:=true;
+  end;
+
 procedure TForm1.battle_pauseClick(Sender: TObject);
 var dmg,i,r:integer;
 begin
-  for i:=1 to 4 do
-  begin
-    r:=random(4)+1;
-    if heroes[i].isAttackSuccesful(level_map.locations[current_location].enemies[r]) then
+
+  //Для каждого героя
+    for i:= 1 to 4 do
     begin
-       level_map.locations[current_location].enemies[r].getDamage(heroes[i].damage);
+      //если он жив
+      if not heroes[i].isDead then
+      begin
+        //выбирается случайный противник
+        r:=random(4)+1;
+        //живой противник
+        While (level_map.locations[current_location].enemies[r].isDead and (not isEveryEnemyDead())) do begin  r:=Random(4)+1;
+          end;
+         //если атака героя успешна
+        if heroes[i].isAttackSuccesful(level_map.locations[current_location].enemies[r]) then begin
+          //наносим урон
+          level_map.locations[current_location].enemies[r].getDamage(heroes[i].damage);
+          //если противник умер, герой повысил уровень
+          if level_map.locations[current_location].enemies[r].isDead() then heroes[i].levelUp();
+        end else memo1.Append('Атака отражена!');
+
+      end;
+      // Если  противник с номером i жив
+      if not level_map.locations[current_location].enemies[i].isDead then
+      begin
+        //если герои мертвы
+        if iseveryHeroDead() then begin
+          //прекратить битву
+           form1.battle_pause.enabled:=False;
+        end;
+       // выберем случайного героя
+        r:=random(4)+1;
+
+        While heroes[r].isDead do r:=Random(4)+1;
+       //если атака противника успешна
+        if level_map.locations[current_location].enemies[i].isAttackSuccesful(heroes[r]) then
+        begin
+          memo1.Append('Урон получил '+ heroes[i].name);
+          //герой получает урон
+          heroes[r].getDamage(level_map.locations[current_location].enemies[i].damage);
+        end
+        else memo1.Append(heroes[i].name+ ' ударили, но удар отражён!');
+      end;
     end;
-    r:=random(4)+1;
-    if level_map.locations[current_location].enemies[i].isAttackSuccesful(heroes[r]) then
-    begin
-       heroes[r].getDamage(level_map.locations[current_location].enemies[i].damage);
-    end;
-  end;
 
     get_messages();
+
+  HpBar1.Position:=heroes[1].hp;
+  HpBar2.Position:=heroes[2].hp;
+  HpBar3.Position:=heroes[3].hp;
+  HpBar4.Position:=heroes[4].hp;
+  ManaBar1.Position:=heroes[1].spells;
+  ManaBar2.Position:=heroes[2].spells;
+  ManaBar3.Position:=heroes[3].spells;
+  ManaBar4.Position:=heroes[4].spells;
+   if iseveryEnemyDead then begin
+     form1.battle_pause.enabled:=False;
+     form1.nxt_location_btn.Visible:=True;
+   end;
+
 end;
 
 procedure TForm1.get_messages();
@@ -177,6 +253,11 @@ begin
     ManaL4.Visible:=True;
     ManaBar4.Visible:=True;
   end;
+end;
+
+procedure TForm1.nxt_location_btnClick(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.getHeroInfo(n: Integer);

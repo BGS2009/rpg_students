@@ -5,7 +5,7 @@ unit Orc;
 interface
 
 uses
-  Classes, SysUtils,Enemy,Persnage;
+  Classes, SysUtils,Enemy,Personage;
    
     { TOrc }
 
