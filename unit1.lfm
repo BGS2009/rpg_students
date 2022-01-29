@@ -11,36 +11,36 @@ object Form1: TForm1
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '2.0.10.0'
-  object Image1: TImage
+  object PortraitImg1: TImage
     Left = 59
     Height = 155
     Top = 593
     Width = 155
-    OnDblClick = Image1DblClick
+    OnDblClick = PortraitImg1DblClick
     Stretch = True
   end
-  object Image2: TImage
+  object PortraitImg2: TImage
     Left = 246
     Height = 155
     Top = 593
     Width = 155
-    OnDblClick = Image2DblClick
+    OnDblClick = PortraitImg2DblClick
     Stretch = True
   end
-  object Image3: TImage
+  object PortraitImg3: TImage
     Left = 431
     Height = 155
     Top = 593
     Width = 155
-    OnDblClick = Image3DblClick
+    OnDblClick = PortraitImg3DblClick
     Stretch = True
   end
-  object Image4: TImage
+  object PortraitImg4: TImage
     Left = 616
     Height = 155
     Top = 593
     Width = 155
-    OnDblClick = Image4DblClick
+    OnDblClick = PortraitImg4DblClick
     Stretch = True
   end
   object Memo1: TMemo

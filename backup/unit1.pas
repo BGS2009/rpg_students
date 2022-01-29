@@ -282,10 +282,14 @@ begin
          if level_map.locations[current_location].enemies[i].hp>0 then loadanddraw(level_map.locations[current_location].enemies[i].portrait_path,false,100+200*i,300);
     end;
     LocTitle.caption:=level_map.locations[current_location].place;
-    heroes[1]:=TMage.create('Ринсвинд');
-    heroes[2]:=TBarbarian.create('Рыжая Соня');
-    heroes[3]:=Tpaladine.create('Лирой');
-    heroes[4]:=TMage.create('Рейстлин');
+    for i:=1 to 4 do
+    begin
+      case (kindCBoxes[i].ItemIndex) of
+        1: heroes[i]:=TBarbarian.create(nameEdits[i].Text);
+        2: heroes[i]:=TMage.create(nameEdits[i].Text);
+        3: heroes[i]:=Tpaladine.create(nameEdits[i].Text);
+      end;
+    end;
     image1.picture:=heroes[1].portrait;
     image2.picture:=heroes[2].portrait;
     image3.picture:=heroes[3].portrait;

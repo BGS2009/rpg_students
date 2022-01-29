@@ -3,11 +3,11 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="28">
+    <Units Count="29">
       <Unit0>
         <Filename Value="rpg.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="42" Y="18"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -19,7 +19,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="279"/>
         <CursorPos X="21" Y="285"/>
         <UsageCount Value="90"/>
@@ -30,7 +29,7 @@
         <Filename Value="barbarian.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Barbarian"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="45"/>
         <CursorPos X="25" Y="81"/>
         <UsageCount Value="90"/>
@@ -40,7 +39,7 @@
         <Filename Value="enemy.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Enemy"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <CursorPos X="27" Y="14"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -49,7 +48,7 @@
         <Filename Value="goblin.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Goblin"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <CursorPos X="18" Y="47"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -58,7 +57,7 @@
         <Filename Value="hero.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Hero"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="34"/>
         <CursorPos X="27" Y="53"/>
         <UsageCount Value="90"/>
@@ -77,7 +76,7 @@
         <Filename Value="location.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Location"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="45" Y="15"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -86,7 +85,7 @@
         <Filename Value="mage.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Mage"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="13"/>
         <CursorPos X="39" Y="66"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -95,7 +94,7 @@
         <Filename Value="map.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Map"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="11"/>
         <CursorPos X="40" Y="36"/>
         <UsageCount Value="90"/>
@@ -105,7 +104,7 @@
         <Filename Value="orc.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Orc"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="3"/>
         <CursorPos X="3" Y="33"/>
         <UsageCount Value="90"/>
@@ -115,7 +114,7 @@
         <Filename Value="paladine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Paladine"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <CursorPos X="59" Y="8"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -124,7 +123,7 @@
         <Filename Value="personage.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Personage"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="15"/>
         <CursorPos X="15" Y="10"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -133,7 +132,7 @@
         <Filename Value="shield.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Shield"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <CursorPos X="13" Y="11"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -142,7 +141,7 @@
         <Filename Value="vampire.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Vampire"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="21"/>
         <CursorPos X="27" Y="42"/>
         <UsageCount Value="90"/>
@@ -176,7 +175,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ChooseHeroesMenuUnit"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="118"/>
         <CursorPos X="9" Y="145"/>
         <UsageCount Value="73"/>
@@ -274,8 +273,16 @@
         <CursorPos X="15" Y="2314"/>
         <UsageCount Value="10"/>
       </Unit27>
+      <Unit28>
+        <Filename Value="backup/chooseHeroesMenuUnit.pas"/>
+        <UnitName Value="ChooseHeroesMenuUnit"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit28>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="chooseHeroesMenuUnit.pas"/>
         <Caret Line="41" Column="32" TopLine="23"/>
@@ -378,24 +385,16 @@
       </Position25>
       <Position26>
         <Filename Value="chooseHeroesMenuUnit.pas"/>
-        <Caret Line="8" Column="3" TopLine="112"/>
+        <Caret Line="104" Column="28" TopLine="75"/>
       </Position26>
       <Position27>
         <Filename Value="chooseHeroesMenuUnit.pas"/>
-        <Caret Line="96" Column="5" TopLine="117"/>
+        <Caret Line="143" Column="14" TopLine="43"/>
       </Position27>
       <Position28>
         <Filename Value="chooseHeroesMenuUnit.pas"/>
-        <Caret Line="104" Column="28" TopLine="75"/>
-      </Position28>
-      <Position29>
-        <Filename Value="chooseHeroesMenuUnit.pas"/>
-        <Caret Line="143" Column="14" TopLine="43"/>
-      </Position29>
-      <Position30>
-        <Filename Value="chooseHeroesMenuUnit.pas"/>
         <Caret Line="122" Column="15" TopLine="114"/>
-      </Position30>
+      </Position28>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

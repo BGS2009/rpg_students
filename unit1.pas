@@ -16,10 +16,10 @@ type
     battle_pause: TButton;
     ChooseHeroesBtn: TButton;
     nxt_location_btn: TButton;
-    Image1: TImage;
-    Image2: TImage;
-    Image3: TImage;
-    Image4: TImage;
+    PortraitImg1: TImage;
+    PortraitImg2: TImage;
+    PortraitImg3: TImage;
+    PortraitImg4: TImage;
     BackGroundAndEnemiesImage: TImage;
     HpL1: TLabel;
     HpL2: TLabel;
@@ -48,11 +48,11 @@ type
     procedure ChooseHeroesBtnClick(Sender: TObject);
     procedure nxt_location_btnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure Image1DblClick(Sender: TObject);
+    procedure PortraitImg1DblClick(Sender: TObject);
     procedure getHeroInfo(n:Integer);
-    procedure Image2DblClick(Sender: TObject);
-    procedure Image3DblClick(Sender: TObject);
-    procedure Image4DblClick(Sender: TObject);
+    procedure PortraitImg2DblClick(Sender: TObject);
+    procedure PortraitImg3DblClick(Sender: TObject);
+    procedure PortraitImg4DblClick(Sender: TObject);
     procedure LoadAndDraw(const sFileName: String ; pic_resize:boolean; x,y:integer);
     procedure battle_pauseClick(Sender: TObject);
     procedure get_messages();
@@ -210,10 +210,10 @@ begin
   //heroes[2]:=TBarbarian.create('Рыжая Соня');
   //heroes[3]:=Tpaladine.create('Лирой');
   //heroes[4]:=TMage.create('Рейстлин');
-  //image1.picture:=heroes[1].portrait;
-  //image2.picture:=heroes[2].portrait;
-  //image3.picture:=heroes[3].portrait;
-  //image4.picture:=heroes[4].portrait;
+  //PortraitImg1.picture:=heroes[1].portrait;
+  //PortraitImg2.picture:=heroes[2].portrait;
+  //PortraitImg3.picture:=heroes[3].portrait;
+  //PortraitImg4.picture:=heroes[4].portrait;
   //NameL1.Caption:=heroes[1].name;
   //NameL2.Caption:=heroes[2].name;
   //NameL3.Caption:=heroes[3].name;
@@ -290,10 +290,10 @@ begin
         3: heroes[i]:=Tpaladine.create(nameEdits[i].Text);
       end;
     end;
-    image1.picture:=heroes[1].portrait;
-    image2.picture:=heroes[2].portrait;
-    image3.picture:=heroes[3].portrait;
-    image4.picture:=heroes[4].portrait;
+    PortraitImg1.picture:=heroes[1].portrait;
+    PortraitImg2.picture:=heroes[2].portrait;
+    PortraitImg3.picture:=heroes[3].portrait;
+    PortraitImg4.picture:=heroes[4].portrait;
     NameL1.Caption:=heroes[1].name;
     NameL2.Caption:=heroes[2].name;
     NameL3.Caption:=heroes[3].name;
@@ -347,22 +347,22 @@ begin
   Form2.Label3.Caption:=heroes[n].shield.name;
 end;  
 
-procedure TForm1.Image1DblClick(Sender: TObject);
+procedure TForm1.PortraitImg1DblClick(Sender: TObject);
 begin
   getHeroInfo(1);
 end;
 
-procedure TForm1.Image2DblClick(Sender: TObject);
+procedure TForm1.PortraitImg2DblClick(Sender: TObject);
 begin
   getHeroInfo(2);
 end;
 
-procedure TForm1.Image3DblClick(Sender: TObject);
+procedure TForm1.PortraitImg3DblClick(Sender: TObject);
 begin
   getHeroInfo(3);
 end;
 
-procedure TForm1.Image4DblClick(Sender: TObject);
+procedure TForm1.PortraitImg4DblClick(Sender: TObject);
 begin
   getHeroInfo(4);
 end;

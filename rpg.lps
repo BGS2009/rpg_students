@@ -19,6 +19,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="279"/>
         <CursorPos X="21" Y="285"/>
         <UsageCount Value="90"/>
@@ -275,11 +276,14 @@
       </Unit27>
       <Unit28>
         <Filename Value="backup/chooseHeroesMenuUnit.pas"/>
+        <ComponentName Value="ChooseHeroesMenuForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="ChooseHeroesMenuUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit28>
     </Units>
     <JumpHistory Count="28" HistoryIndex="27">
