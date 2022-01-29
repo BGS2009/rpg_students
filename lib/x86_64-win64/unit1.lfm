@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 665
+  Left = 763
   Height = 984
-  Top = 62
+  Top = 1
   Width = 1100
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Form1'
+  Caption = 'SwordAndSpell v.0.2'
   ClientHeight = 984
   ClientWidth = 1100
   OnCreate = FormCreate
@@ -47,24 +47,24 @@ object Form1: TForm1
     Left = 793
     Height = 714
     Top = 34
-    Width = 270
+    Width = 277
     Lines.Strings = (
       'Memo1'
     )
     ParentFont = False
     TabOrder = 0
   end
-  object Image5: TImage
+  object BackGroundAndEnemiesImage: TImage
     Left = 59
     Height = 523
-    Top = 34
+    Top = 32
     Width = 712
     Stretch = True
   end
   object HpBar1: TProgressBar
     Left = 59
     Height = 36
-    Top = 849
+    Top = 848
     Width = 155
     ParentFont = False
     TabOrder = 1
@@ -80,6 +80,7 @@ object Form1: TForm1
     Font.Height = -20
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpBar2: TProgressBar
     Left = 246
@@ -100,6 +101,7 @@ object Form1: TForm1
     Font.Height = -20
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpL3: TLabel
     Left = 431
@@ -112,6 +114,7 @@ object Form1: TForm1
     Font.Height = -20
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpBar3: TProgressBar
     Left = 431
@@ -132,6 +135,7 @@ object Form1: TForm1
     Font.Height = -20
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpBar4: TProgressBar
     Left = 616
@@ -277,14 +281,60 @@ object Form1: TForm1
     Caption = 'LocTitle'
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object battle_pause: TButton
-    Left = 831
-    Height = 25
-    Top = 793
-    Width = 75
+    Left = 793
+    Height = 56
+    Top = 763
+    Width = 277
     Caption = 'В бой'
     OnClick = battle_pauseClick
+    ParentFont = False
     TabOrder = 9
+  end
+  object nxt_location_btn: TButton
+    Left = 793
+    Height = 42
+    Top = 878
+    Width = 277
+    Caption = 'Перейти в следующую локацию'
+    OnClick = nxt_location_btnClick
+    ParentFont = False
+    TabOrder = 10
+    Visible = False
+  end
+  object prv_location_btn: TButton
+    Left = 793
+    Height = 42
+    Top = 928
+    Width = 277
+    Caption = 'Перейти в предыдущую локацию'
+    OnClick = nxt_location_btnClick
+    ParentFont = False
+    TabOrder = 11
+    Visible = False
+  end
+  object act_location_btn: TButton
+    Left = 793
+    Height = 42
+    Top = 827
+    Width = 277
+    Caption = 'Обыскать это место'
+    OnClick = nxt_location_btnClick
+    ParentFont = False
+    TabOrder = 12
+    Visible = False
+  end
+  object ChooseHeroesBtn: TButton
+    Left = 16
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'СТАРТ'
+    Font.Height = -367
+    OnClick = ChooseHeroesBtnClick
+    ParentFont = False
+    TabOrder = 13
   end
 end

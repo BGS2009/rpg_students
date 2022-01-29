@@ -8,9 +8,12 @@ To Do:
     1.Escape from battle
     2.Autobattle
     3.Dead enemies don't show on screen
-    4.Heal(?)
+    4.Heal(?) 
+    5.Messages
   II.Menu
     1.Loot in location
     2.Shop 
     3.Inventory
-    
+    4.Choose heroes type
+    5.....................
+    6..............................
