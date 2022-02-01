@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  ComCtrls, Menus, Barbarian, Hero, MAge, Paladine, Personage, Unit2,Map;
+  ComCtrls, Menus, ChooseHeroesMenuUnit, Barbarian, Hero, Mage, Paladine, Personage, Unit2,Map;
 
 type
 
@@ -14,12 +14,13 @@ type
 
   TForm1 = class(TForm)
     battle_pause: TButton;
+    ChooseHeroesBtn: TButton;
     nxt_location_btn: TButton;
     Image1: TImage;
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
-    Image5: TImage;
+    BackGroundAndEnemiesImage: TImage;
     HpL1: TLabel;
     HpL2: TLabel;
     HpL3: TLabel;
@@ -44,6 +45,7 @@ type
     ManaBar3: TProgressBar;
     act_location_btn: TButton;
     prv_location_btn: TButton;
+    procedure ChooseHeroesBtnClick(Sender: TObject);
     procedure nxt_location_btnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Image1DblClick(Sender: TObject);
@@ -102,6 +104,7 @@ implementation
 procedure TForm1.battle_pauseClick(Sender: TObject);
 var dmg,i,r:integer;
 begin
+
   //Для каждого героя
     for i:= 1 to 4 do
     begin
@@ -155,6 +158,10 @@ begin
   ManaBar2.Position:=heroes[2].spells;
   ManaBar3.Position:=heroes[3].spells;
   ManaBar4.Position:=heroes[4].spells;
+   if iseveryEnemyDead then begin
+     form1.battle_pause.enabled:=False;
+     form1.nxt_location_btn.Visible:=True;
+   end;
 
 end;
 
@@ -177,8 +184,8 @@ begin
   jpg := TPicture.Create;
   try
     jpg.LoadFromFile(sFileName);
-    if pic_resize then Image5.Picture.Bitmap.SetSize(jpg.Width, jpg.Height);
-    Image5.Picture.Bitmap.Canvas.Draw(x, y, jpg.Bitmap);
+    if pic_resize then BackGroundAndEnemiesImage.Picture.Bitmap.SetSize(jpg.Width, jpg.Height);
+    BackGroundAndEnemiesImage.Picture.Bitmap.Canvas.Draw(x, y, jpg.Bitmap);
 
   finally
     jpg.Free;
@@ -189,70 +196,146 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 var i:integer;
 begin
+  ChooseHeroesBtn.Align:=alClient;
   level_map:=TMap.create();
   current_location:=2;
-  //image5.Picture:=level_map.locations[current_location].background;
-  loadanddraw(level_map.locations[current_location].background_path,true,0,0);
-  level_map.locations[current_location].enemies[3].hp:=0;
-  for i:=1 to 4 do begin
-       if level_map.locations[current_location].enemies[i].hp>0 then loadanddraw(level_map.locations[current_location].enemies[i].portrait_path,false,100+200*i,300);
-  end;
-  LocTitle.caption:=level_map.locations[current_location].place;
-  heroes[1]:=TMage.create('Ринсвинд');
-  heroes[2]:=TBarbarian.create('Рыжая Соня');
-  heroes[3]:=Tpaladine.create('Лирой');
-  heroes[4]:=TMage.create('Рейстлин');
-  image1.picture:=heroes[1].portrait;
-  image2.picture:=heroes[2].portrait;
-  image3.picture:=heroes[3].portrait;
-  image4.picture:=heroes[4].portrait;
-  NameL1.Caption:=heroes[1].name;
-  NameL2.Caption:=heroes[2].name;
-  NameL3.Caption:=heroes[3].name;
-  NameL4.Caption:=heroes[4].name;
-  HpBar1.Max:=heroes[1].max_hp;
-  HpBar2.Max:=heroes[2].max_hp;
-  HpBar3.Max:=heroes[3].max_hp;
-  HpBar4.Max:=heroes[4].max_hp;
-  HpBar1.Position:=heroes[1].hp;
-  HpBar2.Position:=heroes[2].hp;
-  HpBar3.Position:=heroes[3].hp;
-  HpBar4.Position:=heroes[4].hp;
-  heroes[1].hp:=10;
-  HpBar1.Position:=heroes[1].hp;
-  if heroes[1].ClassType=TMage then
-  begin
-    ManaBar1.Max:=heroes[1].spells;
-    ManaBar1.Position:=heroes[1].spells;
-    ManaL1.Visible:=True;
-    ManaBar1.Visible:=True;
-  end;
-  if heroes[2].ClassType=TMage then
-  begin
-    ManaBar2.Max:=heroes[2].spells;
-    ManaBar2.Position:=heroes[2].spells;
-    ManaL2.Visible:=True;
-    ManaBar2.Visible:=True;
-  end;
-  if heroes[3].ClassType=TMage then
-  begin
-    ManaBar3.Max:=heroes[3].spells;
-    ManaBar3.Position:=heroes[3].spells;
-    ManaL3.Visible:=True;
-    ManaBar3.Visible:=True;
-  end;
-  if heroes[4].ClassType=TMage then
-  begin
-    ManaBar4.Max:=heroes[4].spells;
-    ManaBar4.Position:=heroes[4].spells;
-    ManaL4.Visible:=True;
-    ManaBar4.Visible:=True;
-  end;
+  //BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
+  //loadanddraw(level_map.locations[current_location].background_path,true,0,0);
+  //level_map.locations[current_location].enemies[3].hp:=0;
+  //for i:=1 to 4 do begin
+  //     if level_map.locations[current_location].enemies[i].hp>0 then loadanddraw(level_map.locations[current_location].enemies[i].portrait_path,false,100+200*i,300);
+  //end;
+  //LocTitle.caption:=level_map.locations[current_location].place;
+  //heroes[1]:=TMage.create('Ринсвинд');
+  //heroes[2]:=TBarbarian.create('Рыжая Соня');
+  //heroes[3]:=Tpaladine.create('Лирой');
+  //heroes[4]:=TMage.create('Рейстлин');
+  //image1.picture:=heroes[1].portrait;
+  //image2.picture:=heroes[2].portrait;
+  //image3.picture:=heroes[3].portrait;
+  //image4.picture:=heroes[4].portrait;
+  //NameL1.Caption:=heroes[1].name;
+  //NameL2.Caption:=heroes[2].name;
+  //NameL3.Caption:=heroes[3].name;
+  //NameL4.Caption:=heroes[4].name;
+  //HpBar1.Max:=heroes[1].max_hp;
+  //HpBar2.Max:=heroes[2].max_hp;
+  //HpBar3.Max:=heroes[3].max_hp;
+  //HpBar4.Max:=heroes[4].max_hp;
+  //HpBar1.Position:=heroes[1].hp;
+  //HpBar2.Position:=heroes[2].hp;
+  //HpBar3.Position:=heroes[3].hp;
+  //HpBar4.Position:=heroes[4].hp;
+  //if heroes[1].ClassType=TMage then
+  //begin
+  //  ManaBar1.Max:=heroes[1].spells;
+  //  ManaBar1.Position:=heroes[1].spells;
+  //  ManaL1.Visible:=True;
+  //  ManaBar1.Visible:=True;
+  //end;
+  //if heroes[2].ClassType=TMage then
+  //begin
+  //  ManaBar2.Max:=heroes[2].spells;
+  //  ManaBar2.Position:=heroes[2].spells;
+  //  ManaL2.Visible:=True;
+  //  ManaBar2.Visible:=True;
+  //end;
+  //if heroes[3].ClassType=TMage then
+  //begin
+  //  ManaBar3.Max:=heroes[3].spells;
+  //  ManaBar3.Position:=heroes[3].spells;
+  //  ManaL3.Visible:=True;
+  //  ManaBar3.Visible:=True;
+  //end;
+  //if heroes[4].ClassType=TMage then
+  //begin
+  //  ManaBar4.Max:=heroes[4].spells;
+  //  ManaBar4.Position:=heroes[4].spells;
+  //  ManaL4.Visible:=True;
+  //  ManaBar4.Visible:=True;
+  //end;
 end;
 
 procedure TForm1.nxt_location_btnClick(Sender: TObject);
 begin
 
+end;
+
+procedure TForm1.ChooseHeroesBtnClick(Sender: TObject);
+var
+  i: Integer;
+begin
+  ready:=False;
+  Form1.Visible:=False;
+  ChooseHeroesMenuForm.ShowModal;
+  if ready then
+  begin
+    ChooseHeroesBtn.Visible:=False;
+    HpL1.Visible:=True;
+    HpL2.Visible:=True;
+    HpL3.Visible:=True;
+    HpL4.Visible:=True;
+    BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
+    loadanddraw(level_map.locations[current_location].background_path,true,0,0);
+    level_map.locations[current_location].enemies[3].hp:=0;
+    for i:=1 to 4 do begin
+         if level_map.locations[current_location].enemies[i].hp>0 then loadanddraw(level_map.locations[current_location].enemies[i].portrait_path,false,100+200*i,300);
+    end;
+    LocTitle.caption:=level_map.locations[current_location].place;
+    for i:=1 to 4 do
+    begin
+      case (kindCBoxes[i].ItemIndex) of
+        1: heroes[i]:=TBarbarian.create(nameEdits[i].Text);
+        2: heroes[i]:=TMage.create(nameEdits[i].Text);
+        3: heroes[i]:=Tpaladine.create(nameEdits[i].Text);
+      end;
+    end;
+    image1.picture:=heroes[1].portrait;
+    image2.picture:=heroes[2].portrait;
+    image3.picture:=heroes[3].portrait;
+    image4.picture:=heroes[4].portrait;
+    NameL1.Caption:=heroes[1].name;
+    NameL2.Caption:=heroes[2].name;
+    NameL3.Caption:=heroes[3].name;
+    NameL4.Caption:=heroes[4].name;
+    HpBar1.Max:=heroes[1].max_hp;
+    HpBar2.Max:=heroes[2].max_hp;
+    HpBar3.Max:=heroes[3].max_hp;
+    HpBar4.Max:=heroes[4].max_hp;
+    HpBar1.Position:=heroes[1].hp;
+    HpBar2.Position:=heroes[2].hp;
+    HpBar3.Position:=heroes[3].hp;
+    HpBar4.Position:=heroes[4].hp;
+    if heroes[1].ClassType=TMage then
+    begin
+      ManaBar1.Max:=heroes[1].spells;
+      ManaBar1.Position:=heroes[1].spells;
+      ManaL1.Visible:=True;
+      ManaBar1.Visible:=True;
+    end;
+    if heroes[2].ClassType=TMage then
+    begin
+      ManaBar2.Max:=heroes[2].spells;
+      ManaBar2.Position:=heroes[2].spells;
+      ManaL2.Visible:=True;
+      ManaBar2.Visible:=True;
+    end;
+    if heroes[3].ClassType=TMage then
+    begin
+      ManaBar3.Max:=heroes[3].spells;
+      ManaBar3.Position:=heroes[3].spells;
+      ManaL3.Visible:=True;
+      ManaBar3.Visible:=True;
+    end;
+    if heroes[4].ClassType=TMage then
+    begin
+      ManaBar4.Max:=heroes[4].spells;
+      ManaBar4.Position:=heroes[4].spells;
+      ManaL4.Visible:=True;
+      ManaBar4.Visible:=True;
+    end;
+  end;
+  Form1.Visible:=True;
 end;
 
 procedure TForm1.getHeroInfo(n: Integer);
