@@ -44,7 +44,7 @@ function TBarbarian.isAttackSuccesful(e:TPersonage):boolean;
       else begin
           isAttackSuccesful:=false;
 
-            new_message:+name+' не нанес удар!';
+            new_message:=name+' не нанес удар!';
       end;
     end;
 

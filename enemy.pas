@@ -7,16 +7,34 @@ interface
 uses
   Classes, SysUtils, Personage;
   
-   type TEnemy = class (TPersonage)
+   type
 
-      name:string;
-     
-   portrait_path:string;
-    constructor create();
+   { TEnemy }
+
+ TEnemy = class (TPersonage)
+
+      function isAttackSuccesful(e:Tpersonage):boolean;
+      constructor create();
+      procedure appen();
 
    end;
 implementation
+uses Unit1;
   
+procedure TEnemy.appen();
+begin
+  Unit1.Form1.Memo1.Append(name+'нанёс удар!');
+end;
+
+function TEnemy.isAttackSuccesful(e: Tpersonage): boolean;
+begin
+  if random(attack)>random(e.defend) then begin
+            isAttackSuccesful:=true;
+      end
+      else begin
+          isAttackSuccesful:=false;
+      end;
+end;
 
 constructor TEnemy.create();
 begin

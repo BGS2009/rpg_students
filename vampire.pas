@@ -16,6 +16,7 @@ uses
        function damage():integer;
   end;
 implementation
+uses Unit1;
  
 
 constructor Tvampire.create();
@@ -34,6 +35,7 @@ constructor Tvampire.create();
    end;
 function Tvampire.isAttackSuccesful(e:Tpersonage):boolean;
   begin
+    Unit1.Form1.Memo1.Append(name+'нанёс удар!');
    if random(attack)>random(e.defend) then
    begin
      isAttackSuccesful:=true;
@@ -57,14 +59,13 @@ function Tvampire.isAttackSuccesful(e:Tpersonage):boolean;
 
 function Tvampire.damage():integer;
   begin
-    new_message:='Издает ужасный звук!';
     if b=true then
     begin
      damage:=random(5)+1+bleeding;
     end
     else
     begin
-    damage:=random(5)+1;
+      damage:=random(5)+1;
     end;
     end;
 end.

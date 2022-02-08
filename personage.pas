@@ -6,7 +6,11 @@ interface
 
 uses
   Classes, SysUtils,Item;
- type TPersonage = class
+ type
+
+ { TPersonage }
+
+ TPersonage = class
    new_message: String;
    hp:integer;
    max_hp:integer;
@@ -17,11 +21,14 @@ uses
    exp_points:integer;
    exp_level:integer;
    next_level_exp_points:integer;
+   portrait_path:string;
+   name:string;
    constructor create();
    function isAttackSuccesful(e:TPersonage):boolean;
    function damage():integer;
    function isDead:Boolean;
    function gethpBar: String;
+   procedure levelUp();
    procedure getDamage(dmg:integer);
  end;
 
@@ -53,7 +60,7 @@ constructor TPersonage.create();
     end;
    function TPersonage.damage():integer;
    begin
-      damage:=random(5)+1;
+      damage:=random(attack)+1;
      end;
     procedure TPersonage.getDamage(dmg:integer);
     begin
@@ -78,5 +85,18 @@ begin
   str:=str+']';
   Result:=str;
 end;
+
+procedure TPersonage.levelUp();
+begin
+  new_message:='Персонаж '+name+' повысил уровень!';
+  exp_points:=0;
+  exp_level:=exp_level+1;
+  next_level_exp_points:=round(1.2*next_level_exp_points);
+  max_hp:=round(max_hp*1.2);
+  hp:=max_hp;
+  attack:=attack+1;
+  defend:=defend+1;
+end;
+
 end.
 
