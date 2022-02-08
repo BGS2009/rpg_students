@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  ComCtrls, Menus, ChooseHeroesMenuUnit, Barbarian, Hero, Mage, Paladine, Personage, Unit2,Map;
+  ComCtrls, Menus, Barbarian, Hero, Mage, Paladine, Personage, Unit2,Map,ChooseHeroesMenuUnit;
 
 type
 
@@ -172,8 +172,8 @@ procedure TForm1.get_messages();
     begin
       message:=heroes[i].new_message;
       memo1.Append(message);
-      //message:=level_map.locations[current_location].enemies[i].new_message;
-      memo1.Append(level_map.locations[current_location].enemies[i].new_message);
+      message:=level_map.locations[current_location].enemies[i].new_message;
+      memo1.Append(message);
     end;
   end;
 
@@ -268,7 +268,7 @@ var
 begin
   ready:=False;
   Form1.Visible:=False;
-  ChooseHeroesMenuForm.ShowModal;
+  ChooseHeroesMenuUnit.ChooseHeroesMenuForm.ShowModal;
   if ready then
   begin
     ChooseHeroesBtn.Visible:=False;

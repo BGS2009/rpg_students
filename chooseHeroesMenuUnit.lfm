@@ -106,7 +106,7 @@ object ChooseHeroesMenuForm: TChooseHeroesMenuForm
     Width = 552
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Выберите персонажей'#13#10'за которых вы хотите'#13#10'играть! '
+    Caption = 'Выберите персонажей за которых вы хотите играть! '
     Font.Height = -27
     ParentColor = False
     ParentFont = False
