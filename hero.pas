@@ -8,17 +8,13 @@ uses
   Classes, SysUtils,Graphics, Personage,Weapon,Shield;
  
    type THero = class (TPersonage)
-   name:string;
-   state:string;
    spells:Integer;
    weapons:array [1..5] of TWeapon;
    shield:TShield;
    portrait:TPicture;
-   portrait_path:string;
    constructor create();
    function damage():integer;
    procedure levelUp();
-
    function isAttackSuccesful(e:TPersonage):boolean;
   end;
 

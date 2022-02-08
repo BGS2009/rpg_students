@@ -8,16 +8,12 @@ uses
   Classes, SysUtils,Graphics, Personage,Weapon,Shield;
  
    type THero = class (TPersonage)
-   name:string;
-   state:string;
    spells:Integer;
    weapons:array [1..5] of TWeapon;
    shield:TShield;
    portrait:TPicture;
-   portrait_path:string;
    constructor create();
    function damage():integer;
-   procedure levelUp();
 
    function isAttackSuccesful(e:TPersonage):boolean;
   end;
@@ -44,7 +40,7 @@ end;
 
 function THero.damage():integer;
 begin
-  new_message:=name+' издает боевой клич и поднимает'+weapons[1].name);
+  new_message:=name+' издает боевой клич и поднимает'+weapons[1].name;
    damage:=random(weapons[1].damage)+1;
   end;
 

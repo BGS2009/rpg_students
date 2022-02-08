@@ -15,10 +15,11 @@ uses
   constructor create();
 end;
 implementation
+uses Unit1;
   
 function TOrc.damage: Integer;
 begin
-
+                 uses Unit1;
   damage:=Random(attack)+round(0.1*random(max_Hp-hp));
 end;
 
@@ -30,12 +31,12 @@ begin
   attack:=7;
   defend:=14;
   name:='Орк';
-   exp_points:=120;
+  exp_points:=120;
 end;
 
 function TOrc.isAttackSuccesful(e:TPersonage):boolean;
     begin
-
+      Unit1.Form1.Memo1.Append(name+'нанёс удар!');
       if random(attack)>random(e.defend) then begin
             isAttackSuccesful:=true;
             new_message:=name+' нанес удар!';

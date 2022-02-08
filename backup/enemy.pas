@@ -7,15 +7,26 @@ interface
 uses
   Classes, SysUtils, Personage;
   
-   type TEnemy = class (TPersonage)
+   type
+
+   { TEnemy }
+
+ TEnemy = class (TPersonage)
 
       name:string;
 
-    constructor create();
+      portrait_path:string;
+      constructor create();
+      procedure appen();
 
    end;
 implementation
+uses Unit1;
   
+procedure TEnemy.appen();
+begin
+  Unit1.Form1.Memo1.Append(name+'нанёс удар!');
+end;
 
 constructor TEnemy.create();
 begin
