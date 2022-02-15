@@ -1,5 +1,5 @@
 object Form1: TForm1
-  Left = 2331
+  Left = 701
   Height = 933
   Top = 32
   Width = 1043
@@ -12,36 +12,36 @@ object Form1: TForm1
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '2.0.12.0'
-  object Image1: TImage
+  object PortraitImg1: TImage
     Left = 56
     Height = 147
     Top = 562
     Width = 147
-    OnDblClick = Image1DblClick
+    OnDblClick = PortraitImg1DblClick
     Stretch = True
   end
-  object Image2: TImage
+  object PortraitImg2: TImage
     Left = 233
     Height = 147
     Top = 562
     Width = 147
-    OnDblClick = Image2DblClick
+    OnDblClick = PortraitImg2DblClick
     Stretch = True
   end
-  object Image3: TImage
+  object PortraitImg3: TImage
     Left = 409
     Height = 147
     Top = 562
     Width = 147
-    OnDblClick = Image3DblClick
+    OnDblClick = PortraitImg3DblClick
     Stretch = True
   end
-  object Image4: TImage
+  object PortraitImg4: TImage
     Left = 584
     Height = 147
     Top = 562
     Width = 147
-    OnDblClick = Image4DblClick
+    OnDblClick = PortraitImg4DblClick
     Stretch = True
   end
   object Memo1: TMemo
@@ -55,8 +55,8 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 0
   end
-  object Image5: TImage
-    Left = 56
+  object BackGroundAndEnemiesImage: TImage
+    Left = 53
     Height = 496
     Top = 32
     Width = 675
@@ -65,7 +65,7 @@ object Form1: TForm1
   object HpBar1: TProgressBar
     Left = 56
     Height = 34
-    Top = 805
+    Top = 804
     Width = 147
     ParentFont = False
     TabOrder = 1
@@ -81,6 +81,7 @@ object Form1: TForm1
     Font.Height = -19
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpBar2: TProgressBar
     Left = 233
@@ -101,6 +102,7 @@ object Form1: TForm1
     Font.Height = -19
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpL3: TLabel
     Left = 409
@@ -113,6 +115,7 @@ object Form1: TForm1
     Font.Height = -19
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpBar3: TProgressBar
     Left = 409
@@ -133,6 +136,7 @@ object Form1: TForm1
     Font.Height = -19
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object HpBar4: TProgressBar
     Left = 584
@@ -278,6 +282,7 @@ object Form1: TForm1
     Caption = 'LocTitle'
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object battle_pause: TButton
     Left = 752
@@ -296,6 +301,7 @@ object Form1: TForm1
     Width = 263
     Caption = 'Перейти в следующую локацию'
     OnClick = nxt_location_btnClick
+    ParentFont = False
     TabOrder = 10
     Visible = False
   end
@@ -306,6 +312,7 @@ object Form1: TForm1
     Width = 263
     Caption = 'Перейти в предыдущую локацию'
     OnClick = nxt_location_btnClick
+    ParentFont = False
     TabOrder = 11
     Visible = False
   end
@@ -316,7 +323,18 @@ object Form1: TForm1
     Width = 263
     Caption = 'Обыскать это место'
     OnClick = nxt_location_btnClick
+    ParentFont = False
     TabOrder = 12
     Visible = False
+  end
+  object ChooseHeroesBtn: TButton
+    Left = 15
+    Height = 24
+    Top = 8
+    Width = 71
+    Caption = 'СТАРТ'
+    Font.Height = -348
+    ParentFont = False
+    TabOrder = 13
   end
 end

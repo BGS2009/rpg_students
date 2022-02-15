@@ -11,7 +11,7 @@ uses
 
   type TOrc = class(TEnemy)
   function damage:Integer;
-  function isAttackSuccesful(e:TPersonage):boolean;
+  function isAttackSuccesful(e:TPersonage):boolean;     override;
   constructor create();
 end;
 implementation
@@ -36,7 +36,6 @@ end;
 
 function TOrc.isAttackSuccesful(e:TPersonage):boolean;
     begin
-      Unit1.Form1.Memo1.Append(name+'нанёс удар!');
       if random(attack)>random(e.defend) then begin
             isAttackSuccesful:=true;
             new_message:=name+' нанес удар!';

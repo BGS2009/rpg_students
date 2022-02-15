@@ -34,7 +34,7 @@ uses
 
 
 implementation
-   
+  uses Unit1;
 
 constructor TPersonage.create();
     begin
@@ -50,7 +50,7 @@ constructor TPersonage.create();
 
     function TPersonage.isAttackSuccesful(e:TPersonage):boolean;
     begin
-
+       Unit1.Form1.Memo1.Append('personage');
       if random(attack)>random(e.defend) then begin
             isAttackSuccesful:=true;
       end

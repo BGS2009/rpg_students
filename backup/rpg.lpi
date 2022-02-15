@@ -3,9 +3,6 @@
   <ProjectOptions>
     <Version Value="11"/>
     <General>
-      <Flags>
-        <AlwaysBuild Value="True"/>
-      </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
       <Title Value="rpg"/>
@@ -33,103 +30,92 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="18">
+    <Units Count="17">
       <Unit0>
         <Filename Value="rpg.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="unit1.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Unit1"/>
-      </Unit1>
-      <Unit2>
         <Filename Value="barbarian.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Barbarian"/>
-      </Unit2>
-      <Unit3>
+      </Unit1>
+      <Unit2>
         <Filename Value="enemy.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Enemy"/>
-      </Unit3>
-      <Unit4>
+      </Unit2>
+      <Unit3>
         <Filename Value="goblin.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Goblin"/>
-      </Unit4>
-      <Unit5>
+      </Unit3>
+      <Unit4>
         <Filename Value="hero.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Hero"/>
-      </Unit5>
-      <Unit6>
+      </Unit4>
+      <Unit5>
         <Filename Value="item.pas"/>
         <IsPartOfProject Value="True"/>
-      </Unit6>
-      <Unit7>
+      </Unit5>
+      <Unit6>
         <Filename Value="location.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Location"/>
-      </Unit7>
-      <Unit8>
+      </Unit6>
+      <Unit7>
         <Filename Value="mage.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Mage"/>
-      </Unit8>
-      <Unit9>
+      </Unit7>
+      <Unit8>
         <Filename Value="map.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Map"/>
-      </Unit9>
-      <Unit10>
+      </Unit8>
+      <Unit9>
         <Filename Value="orc.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Orc"/>
-      </Unit10>
-      <Unit11>
+      </Unit9>
+      <Unit10>
         <Filename Value="paladine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Paladine"/>
-      </Unit11>
-      <Unit12>
+      </Unit10>
+      <Unit11>
         <Filename Value="personage.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Personage"/>
-      </Unit12>
-      <Unit13>
+      </Unit11>
+      <Unit12>
         <Filename Value="shield.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Shield"/>
-      </Unit13>
-      <Unit14>
+      </Unit12>
+      <Unit13>
         <Filename Value="vampire.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Vampire"/>
-      </Unit14>
-      <Unit15>
+      </Unit13>
+      <Unit14>
         <Filename Value="weapon.pas"/>
         <IsPartOfProject Value="True"/>
-      </Unit15>
-      <Unit16>
+      </Unit14>
+      <Unit15>
         <Filename Value="unit2.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form2"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit2"/>
-      </Unit16>
-      <Unit17>
-        <Filename Value="chooseHeroesMenuUnit.pas"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="unit1.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="ChooseHeroesMenuForm"/>
         <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="ChooseHeroesMenuUnit"/>
-      </Unit17>
+      </Unit16>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -141,11 +127,6 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
-    <CodeGeneration>
-      <Optimizations>
-        <OptimizationLevel Value="2"/>
-      </Optimizations>
-    </CodeGeneration>
     <Linking>
       <Options>
         <Win32>
@@ -153,11 +134,6 @@
         </Win32>
       </Options>
     </Linking>
-    <Other>
-      <Verbosity>
-        <ShowHintsForUnusedUnitsInMainSrc Value="True"/>
-      </Verbosity>
-    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">

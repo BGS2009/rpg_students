@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1, Unit2, ChooseHeroesMenuUnit;
+  Forms, Unit2,Unit1;
 
 {$R *.res}
 
@@ -16,8 +16,6 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TChooseHeroesMenuForm, ChooseHeroesMenuForm);
   Application.Run;
 end.
 

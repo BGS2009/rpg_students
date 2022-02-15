@@ -12,7 +12,7 @@ uses
        bleeding:integer;
        b:boolean;
        constructor create();
-       function isAttackSuccesful(e:Tpersonage):boolean;
+       function isAttackSuccesful(e:Tpersonage):boolean;  override;
        function damage():integer;
   end;
 implementation
@@ -35,11 +35,10 @@ constructor Tvampire.create();
    end;
 function Tvampire.isAttackSuccesful(e:Tpersonage):boolean;
   begin
-    Unit1.Form1.Memo1.Append(name+'нанёс удар!');
    if random(attack)>random(e.defend) then
    begin
      isAttackSuccesful:=true;
-     new_message:='Укусил героя!';
+     new_message:=name+' укусил героя!';
      if random(bleeding)>10 then
      begin
        b:=true;

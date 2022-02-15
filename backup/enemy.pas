@@ -13,19 +13,28 @@ uses
 
  TEnemy = class (TPersonage)
 
-      name:string;
-
-      portrait_path:string;
+      function isAttackSuccesful(e:Tpersonage):boolean;
       constructor create();
-      procedure appen();
+      procedure append();
 
    end;
 implementation
 uses Unit1;
   
-procedure TEnemy.appen();
+procedure TEnemy.append();
 begin
   Unit1.Form1.Memo1.Append(name+'нанёс удар!');
+end;
+
+function TEnemy.isAttackSuccesful(e: Tpersonage): boolean;
+begin
+  Unit1.Form1.Memo1.Append('enemy');
+  if random(attack)>random(e.defend) then begin
+            isAttackSuccesful:=true;
+      end
+      else begin
+          isAttackSuccesful:=false;
+      end;
 end;
 
 constructor TEnemy.create();

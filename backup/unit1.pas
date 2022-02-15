@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  ComCtrls, Menus, Barbarian, Hero, Mage, Paladine, Personage, Unit2,Map,ChooseHeroesMenuUnit;
+  ComCtrls, Menus, Barbarian, Hero, Mage, Paladine, Personage, Unit2,Map,Enemy;
 
 type
 
@@ -14,7 +14,6 @@ type
 
   TForm1 = class(TForm)
     battle_pause: TButton;
-    Button1: TButton;
     ChooseHeroesBtn: TButton;
     nxt_location_btn: TButton;
     PortraitImg1: TImage;
@@ -47,7 +46,7 @@ type
     act_location_btn: TButton;
     prv_location_btn: TButton;
     procedure Button1Click(Sender: TObject);
-    procedure ChooseHeroesBtnClick(Sender: TObject);
+  //  procedure ChooseHeroesBtnClick(Sender: TObject);
     procedure nxt_location_btnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure PortraitImg1DblClick(Sender: TObject);
@@ -67,7 +66,7 @@ type
 
 var
   Form1: TForm1;
-  heroes:array [1..4] of THero;
+  heroes:array [0..3] of THero;
   level_map:TMap;
   current_location:integer;
 implementation
@@ -82,8 +81,8 @@ implementation
   var i,a:integer;
   begin
     a:=0;
-    for i:=1 to 4 do begin
-      if  (not level_map.locations[current_location].enemies[i].isDead) then begin
+    for i:=0 to 3 do begin
+      if  (not TEnemy(level_map.locations[current_location].enemies[i]).isDead) then begin
         a:=a+1;
       end;
     end;
@@ -95,7 +94,7 @@ implementation
   var i,a:integer;
   begin
     a:=0;
-    for i:=1 to 4 do begin
+    for i:=0 to 3 do begin
       if  (not heroes[i].isDead) then begin
         a:=a+1;
       end;
@@ -108,27 +107,27 @@ var dmg,i,r:integer;
 begin
 
   //Для каждого героя
-    for i:= 1 to 4 do
+    for i:= 0 to 3 do
     begin
       //если он жив
       if not heroes[i].isDead then
       begin
         //выбирается случайный противник
-        r:=random(4)+1;
+        r:=random(4);
         //живой противник
-        While (level_map.locations[current_location].enemies[r].isDead and (not isEveryEnemyDead())) do begin  r:=Random(4)+1;
+        While (TEnemy(level_map.locations[current_location].enemies[r]).isDead and (not isEveryEnemyDead())) do begin  r:=Random(4);
           end;
          //если атака героя успешна
-        if heroes[i].isAttackSuccesful(level_map.locations[current_location].enemies[r]) then begin
+        if heroes[i].isAttackSuccesful(TEnemy(level_map.locations[current_location].enemies[r])) then begin
           //наносим урон
-          level_map.locations[current_location].enemies[r].getDamage(heroes[i].damage);
+          TEnemy(level_map.locations[current_location].enemies[r]).getDamage(heroes[i].damage);
           //если противник умер, герой повысил уровень
-          if level_map.locations[current_location].enemies[r].isDead() then heroes[i].levelUp();
+          if TEnemy(level_map.locations[current_location].enemies[r]).isDead() then heroes[i].levelUp();
         end;
 
       end;
       // Если  противник с номером i жив
-      if not level_map.locations[current_location].enemies[i].isDead then
+      if not TEnemy(level_map.locations[current_location].enemies[i]).isDead then
       begin
         //если герои мертвы
         if iseveryHeroDead() then begin
@@ -136,28 +135,28 @@ begin
            form1.battle_pause.enabled:=False;
         end;
        // выберем случайного героя
-        r:=random(4)+1;
+        r:=random(4);
 
         While heroes[r].isDead do r:=Random(4)+1;
        //если атака противника успешна
-        if level_map.locations[current_location].enemies[i].isAttackSuccesful(heroes[r]) then
+        if TEnemy(level_map.locations[current_location].enemies[i]).isAttackSuccesful(heroes[r]) then
         begin
           //герой получает урон
-          heroes[r].getDamage(level_map.locations[current_location].enemies[i].damage);
+          heroes[r].getDamage(TEnemy(level_map.locations[current_location].enemies[i]).damage);
         end;
       end;
     end;
 
     get_messages();
 
-  HpBar1.Position:=heroes[1].hp;
-  HpBar2.Position:=heroes[2].hp;
-  HpBar3.Position:=heroes[3].hp;
-  HpBar4.Position:=heroes[4].hp;
-  ManaBar1.Position:=heroes[1].spells;
-  ManaBar2.Position:=heroes[2].spells;
-  ManaBar3.Position:=heroes[3].spells;
-  ManaBar4.Position:=heroes[4].spells;
+  HpBar1.Position:=heroes[0].hp;
+  HpBar2.Position:=heroes[1].hp;
+  HpBar3.Position:=heroes[2].hp;
+  HpBar4.Position:=heroes[3].hp;
+  ManaBar1.Position:=heroes[0].spells;
+  ManaBar2.Position:=heroes[1].spells;
+  ManaBar3.Position:=heroes[2].spells;
+  ManaBar4.Position:=heroes[3].spells;
    if iseveryEnemyDead then begin
      form1.battle_pause.enabled:=False;
      form1.nxt_location_btn.Visible:=True;
@@ -168,11 +167,11 @@ end;
 procedure TForm1.get_messages();
   var message:string;i:integer;
   begin
-    for i:=1 to 4 do
+    for i:=0 to 3 do
     begin
       message:=heroes[i].new_message;
       memo1.Append(message);
-      message:=level_map.locations[current_location].enemies[i].new_message;
+      message:=TEnemy(level_map.locations[current_location].enemies[i]).new_message;
       memo1.Append(message);
     end;
   end;
@@ -202,56 +201,56 @@ begin
   current_location:=1;
   BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
   loadanddraw(level_map.locations[current_location].background_path,true,0,0);
-  level_map.locations[current_location].enemies[3].hp:=0;
-  for i:=1 to 4 do begin
-       if level_map.locations[current_location].enemies[i].hp>0 then loadanddraw(level_map.locations[current_location].enemies[i].portrait_path,false,100+200*i,300);
+
+  for i:=0 to 3 do begin
+       if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
   end;
   LocTitle.caption:=level_map.locations[current_location].place;
-  heroes[1]:=TMage.create('Ринсвинд');
-  heroes[2]:=TBarbarian.create('Рыжая Соня');
-  heroes[3]:=Tpaladine.create('Лирой');
-  heroes[4]:=TMage.create('Рейстлин');
-  PortraitImg1.picture:=heroes[1].portrait;
-  PortraitImg2.picture:=heroes[2].portrait;
-  PortraitImg3.picture:=heroes[3].portrait;
-  PortraitImg4.picture:=heroes[4].portrait;
-  NameL1.Caption:=heroes[1].name;
-  NameL2.Caption:=heroes[2].name;
-  NameL3.Caption:=heroes[3].name;
-  NameL4.Caption:=heroes[4].name;
-  HpBar1.Max:=heroes[1].max_hp;
-  HpBar2.Max:=heroes[2].max_hp;
-  HpBar3.Max:=heroes[3].max_hp;
-  HpBar4.Max:=heroes[4].max_hp;
-  HpBar1.Position:=heroes[1].hp;
-  HpBar2.Position:=heroes[2].hp;
-  HpBar3.Position:=heroes[3].hp;
-  HpBar4.Position:=heroes[4].hp;
-  if heroes[1].ClassType=TMage then
+  heroes[0]:=TMage.create('Ринсвинд');
+  heroes[1]:=TBarbarian.create('Рыжая Соня');
+  heroes[2]:=Tpaladine.create('Лирой');
+  heroes[3]:=TMage.create('Рейстлин');
+  PortraitImg1.picture:=heroes[0].portrait;
+  PortraitImg2.picture:=heroes[1].portrait;
+  PortraitImg3.picture:=heroes[2].portrait;
+  PortraitImg4.picture:=heroes[3].portrait;
+  NameL1.Caption:=heroes[0].name;
+  NameL2.Caption:=heroes[1].name;
+  NameL3.Caption:=heroes[2].name;
+  NameL4.Caption:=heroes[3].name;
+  HpBar1.Max:=heroes[0].max_hp;
+  HpBar2.Max:=heroes[1].max_hp;
+  HpBar3.Max:=heroes[2].max_hp;
+  HpBar4.Max:=heroes[3].max_hp;
+  HpBar1.Position:=heroes[0].hp;
+  HpBar2.Position:=heroes[1].hp;
+  HpBar3.Position:=heroes[2].hp;
+  HpBar4.Position:=heroes[3].hp;
+  if heroes[0].ClassType=TMage then
   begin
-    ManaBar1.Max:=heroes[1].spells;
-    ManaBar1.Position:=heroes[1].spells;
+    ManaBar1.Max:=heroes[0].spells;
+    ManaBar1.Position:=heroes[0].spells;
     ManaL1.Visible:=True;
     ManaBar1.Visible:=True;
   end;
-  if heroes[2].ClassType=TMage then
+  if heroes[1].ClassType=TMage then
   begin
-    ManaBar2.Max:=heroes[2].spells;
-    ManaBar2.Position:=heroes[2].spells;
+    ManaBar2.Max:=heroes[1].spells;
+    ManaBar2.Position:=heroes[1].spells;
     ManaL2.Visible:=True;
     ManaBar2.Visible:=True;
   end;
-  if heroes[3].ClassType=TMage then
+  if heroes[2].ClassType=TMage then
   begin
-    ManaBar3.Max:=heroes[3].spells;
-    ManaBar3.Position:=heroes[3].spells;
+    ManaBar3.Max:=heroes[2].spells;
+    ManaBar3.Position:=heroes[2].spells;
     ManaL3.Visible:=True;
     ManaBar3.Visible:=True;
   end;
-  if heroes[4].ClassType=TMage then
+  if heroes[3].ClassType=TMage then
   begin
-    ManaBar4.Max:=heroes[4].spells;
-    ManaBar4.Position:=heroes[4].spells;
+    ManaBar4.Max:=heroes[3].spells;
+    ManaBar4.Position:=heroes[3].spells;
     ManaL4.Visible:=True;
     ManaBar4.Visible:=True;
   end;
@@ -261,14 +260,14 @@ procedure TForm1.nxt_location_btnClick(Sender: TObject);
 begin
 
 end;
-
+           {
 procedure TForm1.ChooseHeroesBtnClick(Sender: TObject);
 var
   i: Integer;
 begin
   ready:=False;
   Form1.Visible:=False;
-  ChooseHeroesMenuUnit.ChooseHeroesMenuForm.ShowModal;
+  chooseheroesmenuunit.ChooseHeroesMenuForm.ShowModal;
   if ready then
   begin
     ChooseHeroesBtn.Visible:=False;
@@ -338,10 +337,10 @@ begin
   end;
   Form1.Visible:=True;
 end;
-
+            }
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  level_map.locations[current_location].enemies[1].appen();
+ //TEnemy(level_map.locations[current_location].enemies[1]).append();
 end;
 
 procedure TForm1.getHeroInfo(n: Integer);
@@ -355,22 +354,22 @@ end;
 
 procedure TForm1.PortraitImg1DblClick(Sender: TObject);
 begin
-  getHeroInfo(1);
+  getHeroInfo(0);
 end;
 
 procedure TForm1.PortraitImg2DblClick(Sender: TObject);
 begin
-  getHeroInfo(2);
+  getHeroInfo(1);
 end;
 
 procedure TForm1.PortraitImg3DblClick(Sender: TObject);
 begin
-  getHeroInfo(3);
+  getHeroInfo(2);
 end;
 
 procedure TForm1.PortraitImg4DblClick(Sender: TObject);
 begin
-  getHeroInfo(4);
+  getHeroInfo(3);
 end;
 
 end.

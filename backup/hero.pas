@@ -14,7 +14,7 @@ uses
    portrait:TPicture;
    constructor create();
    function damage():integer;
-
+   procedure levelUp();
    function isAttackSuccesful(e:TPersonage):boolean;
   end;
 

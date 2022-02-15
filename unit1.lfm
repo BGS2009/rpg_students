@@ -334,18 +334,7 @@ object Form1: TForm1
     Width = 71
     Caption = 'СТАРТ'
     Font.Height = -348
-    OnClick = ChooseHeroesBtnClick
     ParentFont = False
     TabOrder = 13
-  end
-  object Button1: TButton
-    Left = 736
-    Height = 24
-    Top = 667
-    Width = 71
-    Caption = 'Button1'
-    OnClick = Button1Click
-    ParentFont = False
-    TabOrder = 14
   end
 end

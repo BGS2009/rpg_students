@@ -11,7 +11,7 @@ uses
 
    type TGoblin = class (TEnemy)
        constructor create();
-        function isAttackSuccesful(e:TPersonage):boolean;
+       function isAttackSuccesful(e:Tpersonage):boolean;   override;
    end;
 
 implementation
@@ -35,12 +35,12 @@ end;
  begin
    Unit1.Form1.Memo1.Append('dhjkhk');
    if random(attack)>random(e.defend) then begin
-     new_message(name+'нанёс удар!');
+     new_message:=(name+' нанёс удар!');
          isAttackSuccesful:=true;
    end
    else begin
     isAttackSuccesful:=false;
-    new_message:=(name+'не нанёс удар!');
+    new_message:=(name+' не нанёс удар!');
     if hp<0.2 *  max_hp then
     begin
     if random(3) = 0 then

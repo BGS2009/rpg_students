@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="34">
+      <Unit0>
+        <Filename Value="rpg.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="41" Y="12"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="184"/>
+        <CursorPos X="3" Y="201"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="../../../../rpgtest/rpg_students/barbarian.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Barbarian"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="25"/>
+        <CursorPos X="13" Y="44"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="../../../../rpgtest/rpg_students/enemy.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Enemy"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="68" Y="16"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="../../../../rpgtest/rpg_students/goblin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Goblin"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="13"/>
+        <CursorPos X="53" Y="17"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../../../../rpgtest/rpg_students/hero.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Hero"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="22"/>
+        <CursorPos X="54" Y="43"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="../../../../rpgtest/rpg_students/item.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="118"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../../../../rpgtest/rpg_students/location.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Location"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="3"/>
+        <CursorPos X="35" Y="14"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="../../../../rpgtest/rpg_students/mage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Mage"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="10"/>
+        <CursorPos X="39" Y="66"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="../../../../rpgtest/rpg_students/map.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Map"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="10"/>
+        <CursorPos X="46" Y="54"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="../../../../rpgtest/rpg_students/orc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Orc"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="11"/>
+        <CursorPos X="52" Y="23"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../../../../rpgtest/rpg_students/paladine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Paladine"/>
+        <EditorIndex Value="13"/>
+        <CursorPos X="41" Y="66"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../../../../rpgtest/rpg_students/personage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Personage"/>
+        <EditorIndex Value="14"/>
+        <CursorPos X="57" Y="27"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="../../../../rpgtest/rpg_students/shield.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Shield"/>
+        <EditorIndex Value="11"/>
+        <CursorPos X="13" Y="11"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="../../../../rpgtest/rpg_students/vampire.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Vampire"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="4"/>
+        <CursorPos X="63" Y="30"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="../../../../rpgtest/rpg_students/weapon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="118"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="../../../../rpgtest/rpg_students/unit2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit2"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="32" Y="23"/>
+        <UsageCount Value="115"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="../../../../rpgtest/rpg_students/chooseHeroesMenuUnit.pas"/>
+        <ComponentName Value="ChooseHeroesMenuForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ChooseHeroesMenuUnit"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="3" Y="144"/>
+        <UsageCount Value="98"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="../../../../rpgtest/rpg_students/unit3.pas"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit3"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="58" Y="6"/>
+        <UsageCount Value="15"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="../../../../rpgtest/rpg_students/choseheroesmenuunit.pas"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ChooseHeroesMenuUnit"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="37" Y="26"/>
+        <UsageCount Value="15"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="/lazarus/lcl/include/fpimagebitmap.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="127"/>
+        <CursorPos Y="141"/>
+        <UsageCount Value="5"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="../../../../../Desktop/rpg-graphic+chat/unit1.lfm"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="13" Y="5"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="../../../../../Desktop/rpg-graphic+chat/unit1.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="4" Y="3"/>
+        <UsageCount Value="3"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="../../../../rpgtest/rpg_students/choseheroesmenuunit.lfm"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="/lazarus/lcl/include/customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2311"/>
+        <CursorPos Y="2326"/>
+        <UsageCount Value="3"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="../../../../rpgtest/rpg_students/chooseheroesmenuunit.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="130"/>
+        <CursorPos X="4" Y="159"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="../../../../rpgtest/rpg_students/unit3.lfm"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="130"/>
+        <CursorPos X="4" Y="159"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="/lazarus/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="702"/>
+        <CursorPos X="3" Y="716"/>
+        <UsageCount Value="8"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="../../../../rpgtest/rpg_students/backup/chooseHeroesMenuUnit.pas"/>
+        <ComponentName Value="ChooseHeroesMenuForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ChooseHeroesMenuUnit"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="39"/>
+        <CursorPos X="27" Y="60"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="/lazarus/lcl/include/application.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="236"/>
+        <CursorPos Y="252"/>
+        <UsageCount Value="8"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="/lazarus/lcl/interfaces/win32/win32object.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="669"/>
+        <CursorPos Y="686"/>
+        <UsageCount Value="8"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="/lazarus/components/lazutils/winlazutf8.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9"/>
+        <CursorPos Y="24"/>
+        <UsageCount Value="8"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="/lazarus/components/lazutils/lazfileutils.pas"/>
+        <UnitName Value="LazFileUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="285"/>
+        <CursorPos Y="303"/>
+        <UsageCount Value="8"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="/lazarus/lcl/stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1501"/>
+        <CursorPos X="14" Y="1603"/>
+        <UsageCount Value="11"/>
+      </Unit33>
+    </Units>
+    <JumpHistory Count="14" HistoryIndex="13">
+      <Position1>
+        <Filename Value="../../../../rpgtest/rpg_students/map.pas"/>
+        <Caret Line="18" Column="15"/>
+      </Position1>
+      <Position2>
+        <Filename Value="../../../../rpgtest/rpg_students/map.pas"/>
+        <Caret Line="8" Column="59"/>
+      </Position2>
+      <Position3>
+        <Filename Value="../../../../rpgtest/rpg_students/map.pas"/>
+        <Caret Line="49" Column="35"/>
+      </Position3>
+      <Position4>
+        <Filename Value="../../../../rpgtest/rpg_students/map.pas"/>
+        <Caret Line="29" Column="2" TopLine="4"/>
+      </Position4>
+      <Position5>
+        <Filename Value="../../../../rpgtest/rpg_students/location.pas"/>
+        <Caret Line="23" Column="29" TopLine="3"/>
+      </Position5>
+      <Position6>
+        <Filename Value="../../../../rpgtest/rpg_students/enemy.pas"/>
+        <Caret Line="16" Column="75"/>
+      </Position6>
+      <Position7>
+        <Filename Value="../../../../rpgtest/rpg_students/orc.pas"/>
+        <Caret Line="19" Column="53"/>
+      </Position7>
+      <Position8>
+        <Filename Value="../../../../rpgtest/rpg_students/location.pas"/>
+        <Caret Line="20" Column="64" TopLine="6"/>
+      </Position8>
+      <Position9>
+        <Filename Value="../../../../rpgtest/rpg_students/vampire.pas"/>
+        <Caret Line="11" Column="59"/>
+      </Position9>
+      <Position10>
+        <Filename Value="../../../../rpgtest/rpg_students/personage.pas"/>
+        <Caret Line="30" Column="65"/>
+      </Position10>
+      <Position11>
+        <Filename Value="../../../../rpgtest/rpg_students/orc.pas"/>
+        <Caret Line="14" Column="12"/>
+      </Position11>
+      <Position12>
+        <Filename Value="../../../../rpgtest/rpg_students/hero.pas"/>
+        <Caret Line="16" Column="36"/>
+      </Position12>
+      <Position13>
+        <Filename Value="../../../../rpgtest/rpg_students/orc.pas"/>
+        <Caret Line="14" Column="59"/>
+      </Position13>
+      <Position14>
+        <Filename Value="../../../../rpgtest/rpg_students/vampire.pas"/>
+        <Caret Line="10" Column="32"/>
+      </Position14>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
