@@ -1,54 +1,53 @@
 object Form1: TForm1
-  Left = 701
-  Height = 933
-  Top = 32
-  Width = 1043
+  Left = 951
+  Height = 984
+  Top = 68
+  Width = 1100
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'SwordAndSpell v.0.2'
-  ClientHeight = 933
-  ClientWidth = 1043
-  DesignTimePPI = 91
+  ClientHeight = 984
+  ClientWidth = 1100
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.0.10.0'
   object PortraitImg1: TImage
-    Left = 56
-    Height = 147
-    Top = 562
-    Width = 147
+    Left = 59
+    Height = 155
+    Top = 593
+    Width = 155
     OnDblClick = PortraitImg1DblClick
     Stretch = True
   end
   object PortraitImg2: TImage
-    Left = 233
-    Height = 147
-    Top = 562
-    Width = 147
+    Left = 246
+    Height = 155
+    Top = 593
+    Width = 155
     OnDblClick = PortraitImg2DblClick
     Stretch = True
   end
   object PortraitImg3: TImage
-    Left = 409
-    Height = 147
-    Top = 562
-    Width = 147
+    Left = 431
+    Height = 155
+    Top = 593
+    Width = 155
     OnDblClick = PortraitImg3DblClick
     Stretch = True
   end
   object PortraitImg4: TImage
-    Left = 584
-    Height = 147
-    Top = 562
-    Width = 147
+    Left = 616
+    Height = 155
+    Top = 593
+    Width = 155
     OnDblClick = PortraitImg4DblClick
     Stretch = True
   end
   object Memo1: TMemo
-    Left = 752
-    Height = 677
-    Top = 32
-    Width = 263
+    Left = 793
+    Height = 714
+    Top = 34
+    Width = 277
     Lines.Strings = (
       'Memo1'
     )
@@ -56,249 +55,249 @@ object Form1: TForm1
     TabOrder = 0
   end
   object BackGroundAndEnemiesImage: TImage
-    Left = 53
-    Height = 496
-    Top = 32
-    Width = 675
+    Left = 56
+    Height = 523
+    Top = 34
+    Width = 712
     Stretch = True
   end
   object HpBar1: TProgressBar
-    Left = 56
-    Height = 34
-    Top = 804
-    Width = 147
+    Left = 59
+    Height = 36
+    Top = 848
+    Width = 155
     ParentFont = False
     TabOrder = 1
   end
   object HpL1: TLabel
-    Left = 56
-    Height = 27
-    Top = 766
-    Width = 147
+    Left = 59
+    Height = 28
+    Top = 808
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Жизни:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object HpBar2: TProgressBar
-    Left = 233
-    Height = 34
-    Top = 805
-    Width = 147
+    Left = 246
+    Height = 36
+    Top = 849
+    Width = 155
     ParentFont = False
     TabOrder = 2
   end
   object HpL2: TLabel
-    Left = 233
-    Height = 27
-    Top = 766
-    Width = 147
+    Left = 246
+    Height = 28
+    Top = 808
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Жизни:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object HpL3: TLabel
-    Left = 409
-    Height = 27
-    Top = 766
-    Width = 147
+    Left = 431
+    Height = 28
+    Top = 808
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Жизни:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object HpBar3: TProgressBar
-    Left = 409
-    Height = 34
-    Top = 805
-    Width = 147
+    Left = 431
+    Height = 36
+    Top = 849
+    Width = 155
     ParentFont = False
     TabOrder = 3
   end
   object HpL4: TLabel
-    Left = 584
-    Height = 27
-    Top = 766
-    Width = 147
+    Left = 616
+    Height = 28
+    Top = 808
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Жизни:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object HpBar4: TProgressBar
-    Left = 584
-    Height = 34
-    Top = 805
-    Width = 147
+    Left = 616
+    Height = 36
+    Top = 849
+    Width = 155
     ParentFont = False
     TabOrder = 4
   end
   object NameL1: TLabel
-    Left = 56
-    Height = 27
-    Top = 720
-    Width = 147
+    Left = 59
+    Height = 28
+    Top = 760
+    Width = 155
     AutoSize = False
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
   end
   object NameL2: TLabel
-    Left = 233
-    Height = 27
-    Top = 720
-    Width = 147
+    Left = 246
+    Height = 28
+    Top = 760
+    Width = 155
     AutoSize = False
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
   end
   object NameL3: TLabel
-    Left = 409
-    Height = 27
-    Top = 720
-    Width = 147
+    Left = 431
+    Height = 28
+    Top = 760
+    Width = 155
     AutoSize = False
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
   end
   object NameL4: TLabel
-    Left = 584
-    Height = 27
-    Top = 720
-    Width = 147
+    Left = 616
+    Height = 28
+    Top = 760
+    Width = 155
     AutoSize = False
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
   end
   object ManaL1: TLabel
-    Left = 56
-    Height = 27
-    Top = 849
-    Width = 147
+    Left = 59
+    Height = 28
+    Top = 896
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Мана:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object ManaL2: TLabel
-    Left = 233
-    Height = 27
-    Top = 849
-    Width = 147
+    Left = 246
+    Height = 28
+    Top = 896
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Мана:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object ManaL3: TLabel
-    Left = 409
-    Height = 27
-    Top = 849
-    Width = 147
+    Left = 431
+    Height = 28
+    Top = 896
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Мана:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object ManaL4: TLabel
-    Left = 584
-    Height = 27
-    Top = 849
-    Width = 147
+    Left = 616
+    Height = 28
+    Top = 896
+    Width = 155
     Alignment = taCenter
     AutoSize = False
     Caption = 'Мана:'
-    Font.Height = -19
+    Font.Height = -20
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object ManaBar4: TProgressBar
-    Left = 584
-    Height = 34
-    Top = 887
-    Width = 147
+    Left = 616
+    Height = 36
+    Top = 936
+    Width = 155
     ParentFont = False
     TabOrder = 5
     Visible = False
   end
   object ManaBar1: TProgressBar
-    Left = 56
-    Height = 34
-    Top = 887
-    Width = 147
+    Left = 59
+    Height = 36
+    Top = 936
+    Width = 155
     ParentFont = False
     TabOrder = 6
     Visible = False
   end
   object ManaBar2: TProgressBar
-    Left = 233
-    Height = 34
-    Top = 887
-    Width = 147
+    Left = 246
+    Height = 36
+    Top = 936
+    Width = 155
     ParentFont = False
     TabOrder = 7
     Visible = False
   end
   object ManaBar3: TProgressBar
-    Left = 409
-    Height = 34
-    Top = 887
-    Width = 147
+    Left = 431
+    Height = 36
+    Top = 936
+    Width = 155
     ParentFont = False
     TabOrder = 8
     Visible = False
   end
   object LocTitle: TLabel
-    Left = 56
-    Height = 16
-    Top = 528
-    Width = 46
+    Left = 59
+    Height = 15
+    Top = 557
+    Width = 41
     Caption = 'LocTitle'
     ParentColor = False
     ParentFont = False
     Visible = False
   end
   object battle_pause: TButton
-    Left = 752
-    Height = 53
-    Top = 723
-    Width = 263
+    Left = 793
+    Height = 56
+    Top = 763
+    Width = 277
     Caption = 'В бой'
     OnClick = battle_pauseClick
     ParentFont = False
     TabOrder = 9
   end
   object nxt_location_btn: TButton
-    Left = 752
-    Height = 40
-    Top = 832
-    Width = 263
+    Left = 793
+    Height = 42
+    Top = 878
+    Width = 277
     Caption = 'Перейти в следующую локацию'
     OnClick = nxt_location_btnClick
     ParentFont = False
@@ -306,10 +305,10 @@ object Form1: TForm1
     Visible = False
   end
   object prv_location_btn: TButton
-    Left = 752
-    Height = 40
-    Top = 880
-    Width = 263
+    Left = 793
+    Height = 42
+    Top = 928
+    Width = 277
     Caption = 'Перейти в предыдущую локацию'
     OnClick = nxt_location_btnClick
     ParentFont = False
@@ -317,10 +316,10 @@ object Form1: TForm1
     Visible = False
   end
   object act_location_btn: TButton
-    Left = 752
-    Height = 40
-    Top = 784
-    Width = 263
+    Left = 793
+    Height = 42
+    Top = 827
+    Width = 277
     Caption = 'Обыскать это место'
     OnClick = nxt_location_btnClick
     ParentFont = False
@@ -328,12 +327,13 @@ object Form1: TForm1
     Visible = False
   end
   object ChooseHeroesBtn: TButton
-    Left = 15
-    Height = 24
+    Left = 16
+    Height = 25
     Top = 8
-    Width = 71
+    Width = 75
     Caption = 'СТАРТ'
-    Font.Height = -348
+    Font.Height = -367
+    OnClick = ChooseHeroesBtnClick
     ParentFont = False
     TabOrder = 13
   end

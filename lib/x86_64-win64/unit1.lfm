@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 701
+  Left = 951
   Height = 984
-  Top = 5
+  Top = 68
   Width = 1100
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -336,14 +336,5 @@ object Form1: TForm1
     OnClick = ChooseHeroesBtnClick
     ParentFont = False
     TabOrder = 13
-  end
-  object Button1: TButton
-    Left = 776
-    Height = 25
-    Top = 704
-    Width = 75
-    Caption = 'Button1'
-    OnClick = Button1Click
-    TabOrder = 14
   end
 end
