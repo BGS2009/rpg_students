@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  ComCtrls, Menus, Barbarian, Hero, Mage, Paladine, Personage, Unit2,Map,Enemy, chooseheroesmenuunit;
+  ComCtrls, Menus, Barbarian, Hero, Mage, Paladine, Personage, Healer, Unit2, Map,Enemy, chooseheroesmenuunit;
 
 type
 
@@ -44,10 +44,8 @@ type
     ManaBar2: TProgressBar;
     ManaBar3: TProgressBar;
     act_location_btn: TButton;
-    prv_location_btn: TButton;
-    procedure Button1Click(Sender: TObject);
+    prv_location_btn: Tbutton;
     procedure ChooseHeroesBtnClick(Sender: TObject);
-  //  procedure ChooseHeroesBtnClick(Sender: TObject);
     procedure nxt_location_btnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure PortraitImg1DblClick(Sender: TObject);
@@ -113,19 +111,31 @@ begin
       //если он жив
       if not heroes[i].isDead then
       begin
-        //выбирается случайный противник
-        r:=random(4);
-        //живой противник
-        While (TEnemy(level_map.locations[current_location].enemies[r]).isDead and (not isEveryEnemyDead())) do begin  r:=Random(4);
+        //не клерик
+        if (heroes[i].ClassType<>THealer) then
+        begin
+          //выбирается случайный противник
+          r:=random(4);
+          //живой противник
+          While (TEnemy(level_map.locations[current_location].enemies[r]).isDead and (not isEveryEnemyDead())) do r:=Random(4);
+           //если атака героя успешна
+          if heroes[i].isAttackSuccesful(TEnemy(level_map.locations[current_location].enemies[r])) then
+          begin
+            //наносим урон
+            TEnemy(level_map.locations[current_location].enemies[r]).getDamage(heroes[i].damage);
+            //если противник умер, герой повысил уровень
+            if TEnemy(level_map.locations[current_location].enemies[r]).isDead() then heroes[i].levelUp();
           end;
-         //если атака героя успешна
-        if heroes[i].isAttackSuccesful(TEnemy(level_map.locations[current_location].enemies[r])) then begin
-          //наносим урон
-          TEnemy(level_map.locations[current_location].enemies[r]).getDamage(heroes[i].damage);
-          //если противник умер, герой повысил уровень
-          if TEnemy(level_map.locations[current_location].enemies[r]).isDead() then heroes[i].levelUp();
+        end
+        else
+        //клерик
+        begin
+          //выбирается случайный герой
+          r:=random(4);
+          //живой герой
+          While (heroes[r].isDead and (not isEveryHeroDead())) do r:=Random(4);
+          THealer(heroes[i]).Heal(heroes[r]);
         end;
-
       end;
       // Если  противник с номером i жив
       if not TEnemy(level_map.locations[current_location].enemies[i]).isDead then
@@ -158,11 +168,15 @@ begin
   ManaBar2.Position:=heroes[1].spells;
   ManaBar3.Position:=heroes[2].spells;
   ManaBar4.Position:=heroes[3].spells;
-   if iseveryEnemyDead then begin
-     form1.battle_pause.enabled:=False;
-     form1.nxt_location_btn.Visible:=True;
-   end;
-
+  if iseveryEnemyDead then begin
+    form1.battle_pause.enabled:=False;
+    form1.nxt_location_btn.Visible:=True;
+  end;
+  BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
+  loadanddraw(level_map.locations[current_location].background_path,true,0,0);
+  for i:=0 to 3 do begin
+    if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
+  end;
 end;
 
 procedure TForm1.get_messages();
@@ -206,7 +220,7 @@ begin
 
   for i:=0 to 3 do begin
        if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
-  end;
+  e
   LocTitle.caption:=level_map.locations[current_location].place;
   heroes[0]:=TMage.create('Ринсвинд');
   heroes[1]:=TBarbarian.create('Рыжая Соня');
@@ -264,11 +278,6 @@ begin
 
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
-begin
- //TEnemy(level_map.locations[current_location].enemies[1]).append();
-end;
-
 procedure TForm1.ChooseHeroesBtnClick(Sender: TObject);
 var
   i: Integer;
@@ -296,6 +305,7 @@ begin
         1: heroes[i]:=TBarbarian.create(nameEdits[i].Text);
         2: heroes[i]:=TMage.create(nameEdits[i].Text);
         3: heroes[i]:=Tpaladine.create(nameEdits[i].Text);
+        4: heroes[i]:=THealer.create(nameEdits[i].Text);
       end;
     end;
     PortraitImg1.picture:=heroes[0].portrait;
