@@ -13,6 +13,7 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    escape_btn: TButton;
     battle_pause: TButton;
     ChooseHeroesBtn: TButton;
     nxt_location_btn: TButton;
@@ -45,6 +46,8 @@ type
     ManaBar3: TProgressBar;
     act_location_btn: TButton;
     prv_location_btn: Tbutton;
+    TimerForBattle: TTimer;
+    procedure escape_btnClick(Sender: TObject);
     procedure ChooseHeroesBtnClick(Sender: TObject);
     procedure nxt_location_btnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -56,6 +59,7 @@ type
     procedure LoadAndDraw(const sFileName: String ; pic_resize:boolean; x,y:integer);
     procedure battle_pauseClick(Sender: TObject);
     procedure get_messages();
+    procedure TimerForBattleTimer(Sender: TObject);
 
   private
 
@@ -66,8 +70,9 @@ type
 var
   Form1: TForm1;
   heroes:array [0..3] of THero;
-  level_map:TMap;
-  current_location:integer;
+  level_map: TMap;
+  current_location: Integer;
+  do_battle: Boolean;
 implementation
 
 {$R *.lfm}
@@ -85,7 +90,7 @@ implementation
         a:=a+1;
       end;
     end;
-    if a<>0 then isEveryEnemyDead:=false else isEveryEnemyDead:=true;
+    if a<>0 then isEveryEnemyDead:=false else isEveryEnemyDead:=True;
   end;
 
     //проверка, мертвы ли все герои
@@ -98,14 +103,36 @@ implementation
         a:=a+1;
       end;
     end;
-    if a<>0 then isEveryHeroDead:=false else isEveryHeroDead:=true;
+    if a<>0 then isEveryHeroDead:=false else isEveryHeroDead:=True;
   end;
 
 procedure TForm1.battle_pauseClick(Sender: TObject);
-var dmg,i,r:integer;
 begin
+  do_battle:=True;
+  TimerForBattle.Enabled:=True;
+  battle_pause.Enabled:=False;
+end;
 
-  //Для каждого героя
+procedure TForm1.get_messages();
+  var message:string;i:integer;
+  begin
+    for i:=0 to 3 do
+    begin
+      message:=heroes[i].new_message;
+      memo1.Append(message);
+      message:=TEnemy(level_map.locations[current_location].enemies[i]).new_message;
+      memo1.Append(message);
+    end;
+  end;
+
+procedure TForm1.TimerForBattleTimer(Sender: TObject);
+var i,r:integer;
+begin
+  if do_battle then
+  begin
+    Form1.battle_pause.Enabled:=False;
+    Form1.escape_btn.Enabled:=True;
+    //Для каждого героя
     for i:= 0 to 3 do
     begin
       //если он жив
@@ -160,36 +187,33 @@ begin
 
     get_messages();
 
-  HpBar1.Position:=heroes[0].hp;
-  HpBar2.Position:=heroes[1].hp;
-  HpBar3.Position:=heroes[2].hp;
-  HpBar4.Position:=heroes[3].hp;
-  ManaBar1.Position:=heroes[0].spells;
-  ManaBar2.Position:=heroes[1].spells;
-  ManaBar3.Position:=heroes[2].spells;
-  ManaBar4.Position:=heroes[3].spells;
-  if iseveryEnemyDead then begin
-    form1.battle_pause.enabled:=False;
-    form1.nxt_location_btn.Visible:=True;
-  end;
-  BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
-  loadanddraw(level_map.locations[current_location].background_path,true,0,0);
-  for i:=0 to 3 do begin
-    if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
-  end;
-end;
-
-procedure TForm1.get_messages();
-  var message:string;i:integer;
-  begin
-    for i:=0 to 3 do
+    HpBar1.Position:=heroes[0].hp;
+    HpBar2.Position:=heroes[1].hp;
+    HpBar3.Position:=heroes[2].hp;
+    HpBar4.Position:=heroes[3].hp;
+    ManaBar1.Position:=heroes[0].spells;
+    ManaBar2.Position:=heroes[1].spells;
+    ManaBar3.Position:=heroes[2].spells;
+    ManaBar4.Position:=heroes[3].spells;
+    BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
+    loadanddraw(level_map.locations[current_location].background_path,True,0,0);
+    for i:=0 to 3 do begin
+      if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
+    end;
+    if not do_battle then
     begin
-      message:=heroes[i].new_message;
-      memo1.Append(message);
-      message:=TEnemy(level_map.locations[current_location].enemies[i]).new_message;
-      memo1.Append(message);
+      battle_pause.Enabled:=True;
+      TimerForBattle.Enabled:=False;
+    end;
+    if iseveryEnemyDead then begin
+      battle_pause.Enabled:=False;
+      do_battle:=False;
+      nxt_location_btn.Enabled:=True;
+      TimerForBattle.Enabled:=False;
+      escape_btn.Enabled:=False;
     end;
   end;
+end;
 
 procedure TForm1.LoadAndDraw(const sFileName: String;pic_resize:boolean;x,y:integer);
 var
@@ -210,17 +234,18 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 var i:integer;
 begin
+  do_battle:=False;
   ChooseHeroesBtn.Align:=alClient;
   //ChooseHeroesBtn.Visible:=False;
   level_map:=TMap.create();
   current_location:=1;
   {
   BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
-  loadanddraw(level_map.locations[current_location].background_path,true,0,0);
+  loadanddraw(level_map.locations[current_location].background_path,True,0,0);
 
   for i:=0 to 3 do begin
        if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
-  e
+  end;
   LocTitle.caption:=level_map.locations[current_location].place;
   heroes[0]:=TMage.create('Ринсвинд');
   heroes[1]:=TBarbarian.create('Рыжая Соня');
@@ -293,7 +318,7 @@ begin
     HpL3.Visible:=True;
     HpL4.Visible:=True;
     BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
-    loadanddraw(level_map.locations[current_location].background_path,true,0,0);
+    loadanddraw(level_map.locations[current_location].background_path,True,0,0);
 
     for i:=0 to 3 do begin
      if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
@@ -354,6 +379,13 @@ begin
     end;
   end;
   Form1.Visible:=True;
+end;
+
+procedure TForm1.escape_btnClick(Sender: TObject);
+begin
+  do_battle:=False;
+  escape_btn.Enabled:=False;
+  battle_pause.Enabled:=True;
 end;
 
 procedure TForm1.getHeroInfo(n: Integer);
