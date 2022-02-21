@@ -8,6 +8,9 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
 
 type
+
+  { TForm3 }
+
   { TChooseHeroesMenuForm }
 
   TChooseHeroesMenuForm = class(TForm)
@@ -57,7 +60,7 @@ implementation
 
 {$R *.lfm}
 
-{ TChooseHeroesMenuForm }
+{ TForm3 }
 
 procedure TChooseHeroesMenuForm.KindComboBox1Change(Sender: TObject);
 begin
@@ -116,6 +119,7 @@ end;
 
 procedure TChooseHeroesMenuForm.FormCreate(Sender: TObject);
 begin
+  ready:=False;
   kindCBoxes[1]:=KindComboBox1;
   kindCBoxes[2]:=KindComboBox2;
   kindCBoxes[3]:=KindComboBox3;

@@ -3,149 +3,141 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="35">
+    <Units Count="38">
       <Unit0>
         <Filename Value="rpg.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <CursorPos X="39" Y="18"/>
-        <UsageCount Value="118"/>
+        <CursorPos X="11"/>
+        <UsageCount Value="142"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="../../РабочийСтол/ГИЛЕВ/Projects2022/rpg_students/unit1.pas"/>
-        <ComponentName Value="Form1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Unit1"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="184"/>
-        <CursorPos X="3" Y="201"/>
-        <UsageCount Value="118"/>
-      </Unit1>
-      <Unit2>
         <Filename Value="barbarian.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Barbarian"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="25"/>
-        <CursorPos X="13" Y="44"/>
-        <UsageCount Value="118"/>
-      </Unit2>
-      <Unit3>
+        <EditorIndex Value="4"/>
+        <TopLine Value="51"/>
+        <CursorPos X="42" Y="58"/>
+        <UsageCount Value="142"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
         <Filename Value="enemy.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Enemy"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="68" Y="16"/>
-        <UsageCount Value="118"/>
-      </Unit3>
-      <Unit4>
+        <UsageCount Value="142"/>
+      </Unit2>
+      <Unit3>
         <Filename Value="goblin.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Goblin"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="53" Y="17"/>
-        <UsageCount Value="118"/>
-      </Unit4>
-      <Unit5>
+        <UsageCount Value="142"/>
+      </Unit3>
+      <Unit4>
         <Filename Value="hero.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Hero"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos X="54" Y="43"/>
-        <UsageCount Value="118"/>
-      </Unit5>
-      <Unit6>
+        <UsageCount Value="142"/>
+      </Unit4>
+      <Unit5>
         <Filename Value="item.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="118"/>
-      </Unit6>
-      <Unit7>
+        <UsageCount Value="142"/>
+      </Unit5>
+      <Unit6>
         <Filename Value="location.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Location"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2"/>
-        <CursorPos X="60" Y="16"/>
-        <UsageCount Value="118"/>
-      </Unit7>
-      <Unit8>
+        <EditorIndex Value="6"/>
+        <TopLine Value="4"/>
+        <CursorPos X="38" Y="20"/>
+        <UsageCount Value="142"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
         <Filename Value="mage.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Mage"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="39" Y="66"/>
-        <UsageCount Value="118"/>
-      </Unit8>
-      <Unit9>
+        <UsageCount Value="142"/>
+      </Unit7>
+      <Unit8>
         <Filename Value="map.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Map"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="46" Y="54"/>
-        <UsageCount Value="118"/>
-      </Unit9>
-      <Unit10>
+        <UsageCount Value="142"/>
+      </Unit8>
+      <Unit9>
         <Filename Value="orc.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Orc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="52" Y="23"/>
-        <UsageCount Value="118"/>
-      </Unit10>
-      <Unit11>
+        <UsageCount Value="142"/>
+      </Unit9>
+      <Unit10>
         <Filename Value="paladine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Paladine"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="41" Y="66"/>
-        <UsageCount Value="118"/>
-      </Unit11>
-      <Unit12>
+        <UsageCount Value="142"/>
+      </Unit10>
+      <Unit11>
         <Filename Value="personage.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Personage"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="57" Y="27"/>
-        <UsageCount Value="118"/>
-      </Unit12>
-      <Unit13>
+        <EditorIndex Value="1"/>
+        <TopLine Value="38"/>
+        <CursorPos X="9" Y="38"/>
+        <UsageCount Value="142"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
         <Filename Value="shield.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Shield"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13" Y="11"/>
-        <UsageCount Value="118"/>
-      </Unit13>
-      <Unit14>
+        <UsageCount Value="142"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="vampire.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Vampire"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
         <CursorPos X="63" Y="30"/>
-        <UsageCount Value="118"/>
-      </Unit14>
-      <Unit15>
+        <UsageCount Value="142"/>
+      </Unit13>
+      <Unit14>
         <Filename Value="weapon.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="118"/>
-      </Unit15>
-      <Unit16>
+        <UsageCount Value="142"/>
+      </Unit14>
+      <Unit15>
         <Filename Value="unit2.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form2"/>
@@ -155,20 +147,59 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="32" Y="23"/>
-        <UsageCount Value="115"/>
+        <UsageCount Value="139"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="190"/>
+        <CursorPos X="31" Y="211"/>
+        <UsageCount Value="44"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="chooseHeroesMenuUnit.pas"/>
+        <IsPartOfProject Value="True"/>
         <ComponentName Value="ChooseHeroesMenuForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ChooseHeroesMenuUnit"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="118"/>
-        <CursorPos X="3" Y="144"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="21"/>
+        <CursorPos X="29" Y="39"/>
+        <UsageCount Value="122"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit17>
       <Unit18>
+        <Filename Value="healer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Healer"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="7"/>
+        <CursorPos X="6" Y="27"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="../../РабочийСтол/ГИЛЕВ/Projects2022/rpg_students/unit1.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="184"/>
+        <CursorPos X="3" Y="201"/>
+        <UsageCount Value="116"/>
+      </Unit19>
+      <Unit20>
         <Filename Value="unit3.pas"/>
         <ComponentName Value="Form3"/>
         <HasResources Value="True"/>
@@ -176,9 +207,9 @@
         <UnitName Value="Unit3"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="58" Y="6"/>
-        <UsageCount Value="15"/>
-      </Unit18>
-      <Unit19>
+        <UsageCount Value="13"/>
+      </Unit20>
+      <Unit21>
         <Filename Value="choseheroesmenuunit.pas"/>
         <ComponentName Value="Form3"/>
         <HasResources Value="True"/>
@@ -187,26 +218,26 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
         <CursorPos X="37" Y="26"/>
-        <UsageCount Value="15"/>
-      </Unit19>
-      <Unit20>
+        <UsageCount Value="13"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="/lazarus/lcl/include/fpimagebitmap.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="127"/>
         <CursorPos Y="141"/>
-        <UsageCount Value="5"/>
-      </Unit20>
-      <Unit21>
+        <UsageCount Value="3"/>
+      </Unit22>
+      <Unit23>
         <Filename Value="../../../Desktop/rpg-graphic+chat/unit1.lfm"/>
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13" Y="5"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit21>
-      <Unit22>
+      </Unit23>
+      <Unit24>
         <Filename Value="../../../Desktop/rpg-graphic+chat/unit1.pas"/>
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
@@ -214,33 +245,33 @@
         <UnitName Value="Unit1"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="4" Y="3"/>
-        <UsageCount Value="3"/>
-      </Unit22>
-      <Unit23>
+        <UsageCount Value="1"/>
+      </Unit24>
+      <Unit25>
         <Filename Value="choseheroesmenuunit.lfm"/>
         <ComponentName Value="Form3"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit23>
-      <Unit24>
+      </Unit25>
+      <Unit26>
         <Filename Value="/lazarus/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2311"/>
         <CursorPos Y="2326"/>
-        <UsageCount Value="3"/>
-      </Unit24>
-      <Unit25>
+        <UsageCount Value="1"/>
+      </Unit26>
+      <Unit27>
         <Filename Value="chooseheroesmenuunit.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="130"/>
         <CursorPos X="4" Y="159"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit25>
-      <Unit26>
+      </Unit27>
+      <Unit28>
         <Filename Value="unit3.lfm"/>
         <ComponentName Value="Form3"/>
         <HasResources Value="True"/>
@@ -248,18 +279,18 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="130"/>
         <CursorPos X="4" Y="159"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit26>
-      <Unit27>
+      </Unit28>
+      <Unit29>
         <Filename Value="/lazarus/lcl/controls.pp"/>
         <UnitName Value="Controls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="702"/>
         <CursorPos X="3" Y="716"/>
-        <UsageCount Value="8"/>
-      </Unit27>
-      <Unit28>
+        <UsageCount Value="6"/>
+      </Unit29>
+      <Unit30>
         <Filename Value="backup/chooseHeroesMenuUnit.pas"/>
         <ComponentName Value="ChooseHeroesMenuForm"/>
         <HasResources Value="True"/>
@@ -268,56 +299,183 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="39"/>
         <CursorPos X="27" Y="60"/>
-        <UsageCount Value="25"/>
-      </Unit28>
-      <Unit29>
+        <UsageCount Value="23"/>
+      </Unit30>
+      <Unit31>
         <Filename Value="/lazarus/lcl/include/application.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="236"/>
         <CursorPos Y="252"/>
-        <UsageCount Value="8"/>
-      </Unit29>
-      <Unit30>
+        <UsageCount Value="6"/>
+      </Unit31>
+      <Unit32>
         <Filename Value="/lazarus/lcl/interfaces/win32/win32object.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="669"/>
         <CursorPos Y="686"/>
-        <UsageCount Value="8"/>
-      </Unit30>
-      <Unit31>
+        <UsageCount Value="6"/>
+      </Unit32>
+      <Unit33>
         <Filename Value="/lazarus/components/lazutils/winlazutf8.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="9"/>
         <CursorPos Y="24"/>
-        <UsageCount Value="8"/>
-      </Unit31>
-      <Unit32>
+        <UsageCount Value="6"/>
+      </Unit33>
+      <Unit34>
         <Filename Value="/lazarus/components/lazutils/lazfileutils.pas"/>
         <UnitName Value="LazFileUtils"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="285"/>
         <CursorPos Y="303"/>
-        <UsageCount Value="8"/>
-      </Unit32>
-      <Unit33>
+        <UsageCount Value="6"/>
+      </Unit34>
+      <Unit35>
         <Filename Value="/lazarus/lcl/stdctrls.pp"/>
         <UnitName Value="StdCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1501"/>
         <CursorPos X="14" Y="1603"/>
-        <UsageCount Value="11"/>
-      </Unit33>
-      <Unit34>
-        <Filename Value="unit1.pas"/>
-        <IsPartOfProject Value="True"/>
-        <HasResources Value="True"/>
+        <UsageCount Value="9"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="../../../../../lazarus/lcl/include/customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2278"/>
+        <CursorPos Y="2326"/>
+        <UsageCount Value="8"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="../rpg to extremal change/unit1.pas"/>
         <UnitName Value="Unit1"/>
-        <EditorIndex Value="1"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-      </Unit34>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="276"/>
+        <CursorPos X="13" Y="292"/>
+        <UsageCount Value="8"/>
+      </Unit37>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="137" Column="18" TopLine="122"/>
+      </Position1>
+      <Position2>
+        <Filename Value="healer.pas"/>
+        <Caret Line="49" Column="10" TopLine="34"/>
+      </Position2>
+      <Position3>
+        <Filename Value="chooseHeroesMenuUnit.pas"/>
+        <Caret Line="39" Column="26" TopLine="33"/>
+      </Position3>
+      <Position4>
+        <Filename Value="chooseHeroesMenuUnit.pas"/>
+        <Caret Line="86" TopLine="81"/>
+      </Position4>
+      <Position5>
+        <Filename Value="chooseHeroesMenuUnit.pas"/>
+        <Caret Line="45" Column="15" TopLine="31"/>
+      </Position5>
+      <Position6>
+        <Filename Value="barbarian.pas"/>
+        <Caret Line="16" Column="21"/>
+      </Position6>
+      <Position7>
+        <Filename Value="healer.pas"/>
+        <Caret Line="25" Column="34" TopLine="7"/>
+      </Position7>
+      <Position8>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="71" Column="22" TopLine="63"/>
+      </Position8>
+      <Position9>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="66" Column="5" TopLine="57"/>
+      </Position9>
+      <Position10>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="276" Column="20" TopLine="262"/>
+      </Position10>
+      <Position11>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="110" Column="3" TopLine="107"/>
+      </Position11>
+      <Position12>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="178" Column="34" TopLine="111"/>
+      </Position12>
+      <Position13>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="141" Column="37" TopLine="89"/>
+      </Position13>
+      <Position14>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="143" Column="37" TopLine="115"/>
+      </Position14>
+      <Position15>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="212" Column="3" TopLine="290"/>
+      </Position15>
+      <Position16>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="196" Column="6" TopLine="18"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="211" TopLine="282"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="196" Column="5" TopLine="80"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="75" Column="12" TopLine="259"/>
+      </Position19>
+      <Position20>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="465" Column="28" TopLine="462"/>
+      </Position20>
+      <Position21>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="167" Column="11" TopLine="138"/>
+      </Position21>
+      <Position22>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="113" Column="31" TopLine="109"/>
+      </Position22>
+      <Position23>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="109" Column="61" TopLine="109"/>
+      </Position23>
+      <Position24>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="131" Column="16" TopLine="127"/>
+      </Position24>
+      <Position25>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="113" Column="30" TopLine="109"/>
+      </Position25>
+      <Position26>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="111" Column="3" TopLine="109"/>
+      </Position26>
+      <Position27>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="208" Column="12" TopLine="195"/>
+      </Position27>
+      <Position28>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="388" Column="12" TopLine="375"/>
+      </Position28>
+      <Position29>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="133" Column="35" TopLine="198"/>
+      </Position29>
+      <Position30>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="386" Column="29" TopLine="382"/>
+      </Position30>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode=""/>

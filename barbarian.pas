@@ -21,11 +21,14 @@ implementation
 function TBarbarian.damage: Integer;
 begin
   if random(2)=0 then begin
+     readln;
     damage:=Random(attack);
 
   end
   else
   begin
+    new_message:=name+ ' ударил ещё раз!';
+    readln;
 
     damage:=Random(attack)*2;
   end;

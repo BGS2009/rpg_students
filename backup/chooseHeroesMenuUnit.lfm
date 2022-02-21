@@ -163,6 +163,7 @@ object ChooseHeroesMenuForm: TChooseHeroesMenuForm
       'Варвар'
       'Маг'
       'Паладин'
+      'Клерик'
     )
     OnChange = KindComboBox1Change
     TabOrder = 4
@@ -192,6 +193,7 @@ object ChooseHeroesMenuForm: TChooseHeroesMenuForm
       'Варвар'
       'Маг'
       'Паладин'
+      'Клерик'
     )
     OnChange = KindComboBox2Change
     TabOrder = 6
@@ -209,6 +211,7 @@ object ChooseHeroesMenuForm: TChooseHeroesMenuForm
       'Варвар'
       'Маг'
       'Паладин'
+      'Клерик'
     )
     OnChange = KindComboBox3Change
     TabOrder = 7
@@ -226,6 +229,7 @@ object ChooseHeroesMenuForm: TChooseHeroesMenuForm
       'Варвар'
       'Маг'
       'Паладин'
+      'Клерик'
     )
     OnChange = KindComboBox4Change
     TabOrder = 8
