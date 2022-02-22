@@ -10,6 +10,7 @@ uses
          type Tpaladine = class (THero)
          d:integer;
          constructor create(name1:String);
+         procedure getDamage(dmg:integer);
          function isAttackSuccesful(e:TPersonage):boolean;
   end;
 implementation
@@ -25,9 +26,9 @@ begin
   weapon1.name:='Жуайез';
   weapon1.damage:=15;
   weapons[1]:=weapon1;
-  shield1:=TShield.create;
+   shield1:=TShield.create;
   shield1.name:='Стальной щит';
-  shield1.defend:=15;
+ shield1.defend:=15;
   shield:=shield1;
   name:=name1;
     name:=name1;
@@ -41,6 +42,12 @@ begin
          exp_points:=0;
          exp_level:=1;
          next_level_exp_points:=100;
+  end;
+
+
+  procedure TPaladine.getDamage(dmg:integer);
+  begin
+  hp:=hp-dmg ;
   end;
 
   function TPaladine.isAttackSuccesful(e:TPersonage):boolean;

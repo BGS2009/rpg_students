@@ -33,7 +33,7 @@ implementation
      locations[2].place:='Орочья деревня';
      locations[2].setBackground('orcvillage.jpg')   ;
      locations[2].loot[1]:=Titem.create('Палица короля орков');
-    for i:=0 to 3 do begin
+     for i:=0 to 3 do begin
      enemy1:=TOrc.create();
      locations[2].enemies.add(enemy1);
      end;

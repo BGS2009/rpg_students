@@ -5,7 +5,7 @@ unit Healer;
 interface
 
 uses
-  Hero, Personage, Weapon, Shield,Classes, SysUtils;
+  Graphics, Hero, Personage, Weapon, Shield,Classes, SysUtils;
 
 type
 

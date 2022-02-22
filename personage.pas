@@ -65,6 +65,7 @@ constructor TPersonage.create();
     procedure TPersonage.getDamage(dmg:integer);
     begin
       hp:=hp-dmg;
+      if hp<0 then hp:=0;
     end;
     function TPersonage.isDead:Boolean;
     begin

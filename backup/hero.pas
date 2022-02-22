@@ -40,7 +40,7 @@ end;
 
 function THero.damage():integer;
 begin
-  new_message:=name+' издает боевой клич и поднимает'+weapons[1].name;
+  new_message:=name+' издает боевой клич и поднимает '+weapons[1].name;
    damage:=random(weapons[1].damage)+1;
   end;
 
@@ -60,7 +60,7 @@ begin
 
 procedure THero.levelUp()   ;
 begin
-  new_message:='Герой'+name+' повысил уровень!';
+  new_message:='Герой '+name+' повысил уровень!';
   exp_points:=0;
   exp_level:=exp_level+1;
   next_level_exp_points:=round(1.2*next_level_exp_points);
