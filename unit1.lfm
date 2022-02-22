@@ -285,7 +285,7 @@ object Form1: TForm1
   end
   object battle_pause: TButton
     Left = 792
-    Height = 45
+    Height = 64
     Top = 720
     Width = 277
     Caption = 'В бой'
@@ -296,7 +296,7 @@ object Form1: TForm1
   object nxt_location_btn: TButton
     Left = 792
     Height = 42
-    Top = 864
+    Top = 888
     Width = 277
     Caption = 'Перейти в следующую локацию'
     Enabled = False
@@ -307,18 +307,18 @@ object Form1: TForm1
   object prv_location_btn: TButton
     Left = 792
     Height = 42
-    Top = 912
+    Top = 936
     Width = 277
     Caption = 'Перейти в предыдущую локацию'
     Enabled = False
-    OnClick = nxt_location_btnClick
+    OnClick = prv_location_btnClick
     ParentFont = False
     TabOrder = 11
   end
   object act_location_btn: TButton
     Left = 792
     Height = 42
-    Top = 816
+    Top = 840
     Width = 277
     Caption = 'Обыскать это место'
     Enabled = False
@@ -328,7 +328,7 @@ object Form1: TForm1
   object escape_btn: TButton
     Left = 792
     Height = 42
-    Top = 768
+    Top = 792
     Width = 277
     Caption = 'Сбежать'
     Enabled = False

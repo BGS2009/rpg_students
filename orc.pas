@@ -19,7 +19,6 @@ uses Unit1;
   
 function TOrc.damage: Integer;
 begin
-
   damage:=Random(attack)+round(0.1*random(max_Hp-hp));
 end;
 

@@ -59,6 +59,7 @@ type
     procedure LoadAndDraw(const sFileName: String ; pic_resize:boolean; x,y:integer);
     procedure battle_pauseClick(Sender: TObject);
     procedure get_messages();
+    procedure prv_location_btnClick(Sender: TObject);
     procedure TimerForBattleTimer(Sender: TObject);
 
   private
@@ -111,6 +112,7 @@ begin
   do_battle:=True;
   TimerForBattle.Enabled:=True;
   battle_pause.Enabled:=False;
+  prv_location_btn.Enabled:=False;
 end;
 
 procedure TForm1.get_messages();
@@ -118,12 +120,33 @@ procedure TForm1.get_messages();
   begin
     for i:=0 to 3 do
     begin
-      message:=heroes[i].new_message;
-      memo1.Append(message);
-      message:=TEnemy(level_map.locations[current_location].enemies[i]).new_message;
-      memo1.Append(message);
+      if not heroes[1].isDead then
+      begin
+        message:=heroes[i].new_message;
+        memo1.Append(message);
+      end;
+      if not TPersonage(level_map.locations[current_location].enemies[i]).isDead then
+      begin
+        message:=TEnemy(level_map.locations[current_location].enemies[i]).new_message;
+        memo1.Append(message);
+      end;
     end;
   end;
+
+procedure TForm1.prv_location_btnClick(Sender: TObject);
+var
+  i:Integer;
+begin
+  current_location:=current_location-1;
+  BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
+  loadanddraw(level_map.locations[current_location].background_path,True,0,0);
+  for i:=0 to 3 do begin
+    if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
+  end;
+  nxt_location_btn.Enabled:=True;
+  battle_pause.Enabled:=False;
+  if current_location=1 then prv_location_btn.Enabled:=False;
+end;
 
 procedure TForm1.TimerForBattleTimer(Sender: TObject);
 var i,r:integer;
@@ -160,7 +183,7 @@ begin
           //выбирается случайный герой
           r:=random(4);
           //живой герой
-          While (heroes[r].isDead and (not isEveryHeroDead())) do r:=Random(4);
+          While (heroes[r].isDead) do r:=Random(4);
           THealer(heroes[i]).Heal(heroes[r]);
         end;
       end;
@@ -205,12 +228,14 @@ begin
       battle_pause.Enabled:=True;
       TimerForBattle.Enabled:=False;
     end;
-    if iseveryEnemyDead then begin
+    if iseveryEnemyDead then
+    begin
       battle_pause.Enabled:=False;
       do_battle:=False;
       nxt_location_btn.Enabled:=True;
       TimerForBattle.Enabled:=False;
       escape_btn.Enabled:=False;
+      if current_location>1 then prv_location_btn.Enabled:=True;
     end;
   end;
 end;
@@ -238,7 +263,7 @@ begin
   ChooseHeroesBtn.Align:=alClient;
   //ChooseHeroesBtn.Visible:=False;
   level_map:=TMap.create();
-  current_location:=1;
+  current_location:=3;
   {
   BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
   loadanddraw(level_map.locations[current_location].background_path,True,0,0);
@@ -299,8 +324,22 @@ begin
 end;
 
 procedure TForm1.nxt_location_btnClick(Sender: TObject);
+var
+  i:Integer;
 begin
-
+  current_location:=current_location+1;
+  BackGroundAndEnemiesImage.Picture:=level_map.locations[current_location].background;
+  loadanddraw(level_map.locations[current_location].background_path,True,0,0);
+  for i:=0 to 3 do
+  begin
+    if TEnemy(level_map.locations[current_location].enemies[i]).hp>0 then loadanddraw(TEnemy(level_map.locations[current_location].enemies[i]).portrait_path,false,100+200*i,300);
+  end;
+  prv_location_btn.Enabled:=True;
+  if not isEveryEnemyDead() then
+  begin
+    nxt_location_btn.Enabled:=False;
+    battle_pause.Enabled:=True;
+  end;
 end;
 
 procedure TForm1.ChooseHeroesBtnClick(Sender: TObject);
@@ -327,10 +366,10 @@ begin
     for i:=0 to 3 do
     begin
       case (kindCBoxes[i+1].ItemIndex) of
-        1: heroes[i]:=TBarbarian.create(nameEdits[i].Text);
-        2: heroes[i]:=TMage.create(nameEdits[i].Text);
-        3: heroes[i]:=Tpaladine.create(nameEdits[i].Text);
-        4: heroes[i]:=THealer.create(nameEdits[i].Text);
+        1: heroes[i]:=TBarbarian.create(nameEdits[i+1].Text);
+        2: heroes[i]:=TMage.create(nameEdits[i+1].Text);
+        3: heroes[i]:=Tpaladine.create(nameEdits[i+1].Text);
+        4: heroes[i]:=THealer.create(nameEdits[i+1].Text);
       end;
     end;
     PortraitImg1.picture:=heroes[0].portrait;
@@ -385,7 +424,8 @@ procedure TForm1.escape_btnClick(Sender: TObject);
 begin
   do_battle:=False;
   escape_btn.Enabled:=False;
-  battle_pause.Enabled:=true;
+  battle_pause.Enabled:=True;
+  if current_location>1 then prv_location_btn.Enabled:=True;
 end;
 
 procedure TForm1.getHeroInfo(n: Integer);

@@ -67,7 +67,7 @@ begin
   max_hp:=round(max_hp*1.2);
   hp:=max_hp;
   attack:=attack+1;
-  defend:=defend+1;
+  if (not isDead) then defend:=defend+1;
 end;
 
 end.

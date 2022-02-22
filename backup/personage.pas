@@ -34,7 +34,7 @@ uses
 
 
 implementation
-   
+  uses Unit1;
 
 constructor TPersonage.create();
     begin

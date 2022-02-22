@@ -101,6 +101,7 @@
       <Unit14>
         <Filename Value="weapon.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="Weapon"/>
       </Unit14>
       <Unit15>
         <Filename Value="unit2.pas"/>
